@@ -3,11 +3,12 @@ import React from 'react';
 
 const DrumMachine = React.createClass({
   getInitialState() {
-    setInterval(this.tick, 200);
     return {
+      activeStep: -1,
       bpm: 120,
+      interval: null,
+      isTicking: false,
       sequence: [[], [], [], [], []],
-      activeStep: 0
     };
   },
   btnClicked(row, step) {
@@ -18,6 +19,21 @@ const DrumMachine = React.createClass({
   handleChange(event) {
     this.setState({ bpm: event.target.value });
   },
+  handleClickStartStop() {
+    if (this.state.isTicking) {
+      clearTimeout(this.state.interval);
+      this.setState({
+        activeStep: -1,
+        isTicking: false
+      });
+    }
+    else {
+      this.setState({
+        isTicking: true
+      });
+      this.tick();
+    }
+  },
   tick() {
     const nextActiveStep = (this.state.activeStep + 1) % 16;
     for (let i=0; i<5; ++i) {
@@ -25,14 +41,17 @@ const DrumMachine = React.createClass({
         console.log(`Play instrument ${i}.`);
       }
     }
-    this.setState({ activeStep: nextActiveStep });
+    this.setState({
+      activeStep: nextActiveStep,
+      interval: setTimeout(this.tick, 60000 / this.state.bpm / 4)
+    });
   },
   render() {
     this.state.sequence[0][0] = true;
     this.state.sequence[4][15] = true;
     return (
       <div>
-        <button>Play/Pause</button>
+        <button onClick={this.handleClickStartStop}>{this.state.isTicking ? 'Stop' : 'Start'}</button>
         <input onChange={this.handleChange} type='number' value={this.state.bpm}/>
         <Grid
           activeStep={this.state.activeStep}
