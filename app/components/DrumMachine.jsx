@@ -31,42 +31,46 @@ var sampleLoader = function(url, context, callback) {
   request.send();
 };
 const drums = [];
-sampleLoader('./CB/CB.mp3', context, function(buffer) {
+sampleLoader('./bd/bd0000.mp3', context, function(buffer) {
   drums[0] = new Drum(context, buffer);
 });
-sampleLoader('./HT/HT00.mp3', context, function(buffer) {
+sampleLoader('./SD/SD0000.mp3', context, function(buffer) {
   drums[1] = new Drum(context, buffer);
 });
-sampleLoader('./CY/CY0000.mp3', context, function(buffer) {
+sampleLoader('./LC/LC00.WAV', context, function(buffer) {
   drums[2] = new Drum(context, buffer);
 });
-sampleLoader('./SD/SD0000.mp3', context, function(buffer) {
+sampleLoader('./MC/MC00.WAV', context, function(buffer) {
   drums[3] = new Drum(context, buffer);
 });
-sampleLoader('./bd/bd0000.mp3', context, function(buffer) {
+sampleLoader('./HC/HC00.WAV', context, function(buffer) {
   drums[4] = new Drum(context, buffer);
 });
-sampleLoader('./CB/CB.mp3', context, function(buffer) {
+sampleLoader('./RS/RS.WAV', context, function(buffer) {
   drums[5] = new Drum(context, buffer);
 });
-sampleLoader('./HT/HT00.mp3', context, function(buffer) {
+sampleLoader('./CP/CP.WAV', context, function(buffer) {
   drums[6] = new Drum(context, buffer);
 });
-sampleLoader('./CY/CY0000.mp3', context, function(buffer) {
+sampleLoader('./CB/CB.mp3', context, function(buffer) {
   drums[7] = new Drum(context, buffer);
 });
-sampleLoader('./SD/SD0000.mp3', context, function(buffer) {
+sampleLoader('./CY/CY0000.mp3', context, function(buffer) {
   drums[8] = new Drum(context, buffer);
 });
-sampleLoader('./HT/HT00.mp3', context, function(buffer) {
+sampleLoader('./OH/OH00.WAV', context, function(buffer) {
   drums[9] = new Drum(context, buffer);
 });
-sampleLoader('./CY/CY0000.mp3', context, function(buffer) {
+sampleLoader('./CH/CH.WAV', context, function(buffer) {
   drums[10] = new Drum(context, buffer);
 });
-sampleLoader('./SD/SD0000.mp3', context, function(buffer) {
+sampleLoader('./CL/CL.WAV', context, function(buffer) {
   drums[11] = new Drum(context, buffer);
 });
+sampleLoader('./LT/LT00.WAV', context, function(buffer) {
+  drums[12] = new Drum(context, buffer);
+});
+
 
 
 
@@ -77,7 +81,7 @@ const DrumMachine = React.createClass({
       bpm: 120,
       interval: null,
       isTicking: false,
-      sequence: [[], [], [], [], []],
+      sequence: [[], [], [], [], [],[], [], [], [], [],[], [], []]
     };
   },
   btnClicked(row, step) {
@@ -104,8 +108,9 @@ const DrumMachine = React.createClass({
   },
   tick() {
     const nextActiveStep = (this.state.activeStep + 1) % 16;
-    for (let i=0; i<5; ++i) {
+    for (let i=0; i<this.state.sequence.length; ++i) {
       if (this.state.sequence[i][nextActiveStep]) {
+        console.log(i, drums[i]);
         drums[i].trigger(context.currentTime);
       }
     }

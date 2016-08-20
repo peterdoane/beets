@@ -4,7 +4,7 @@ import Btn from 'components/Btn';
 const Grid = React.createClass({
   render() {
     const btns = [];
-    for (let row=0; row<5; ++row) {
+    for (let row=0; row<this.props.sequence.length; ++row) {
       const btnRow = [];
       for (let step=0; step<16; ++step) {
         btnRow.push(
