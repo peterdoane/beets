@@ -46,6 +46,29 @@ sampleLoader('./SD/SD0000.mp3', context, function(buffer) {
 sampleLoader('./bd/bd0000.mp3', context, function(buffer) {
   drums[4] = new Drum(context, buffer);
 });
+sampleLoader('./CB/CB.mp3', context, function(buffer) {
+  drums[5] = new Drum(context, buffer);
+});
+sampleLoader('./HT/HT00.mp3', context, function(buffer) {
+  drums[6] = new Drum(context, buffer);
+});
+sampleLoader('./CY/CY0000.mp3', context, function(buffer) {
+  drums[7] = new Drum(context, buffer);
+});
+sampleLoader('./SD/SD0000.mp3', context, function(buffer) {
+  drums[8] = new Drum(context, buffer);
+});
+sampleLoader('./HT/HT00.mp3', context, function(buffer) {
+  drums[9] = new Drum(context, buffer);
+});
+sampleLoader('./CY/CY0000.mp3', context, function(buffer) {
+  drums[10] = new Drum(context, buffer);
+});
+sampleLoader('./SD/SD0000.mp3', context, function(buffer) {
+  drums[11] = new Drum(context, buffer);
+});
+
+
 
 const DrumMachine = React.createClass({
   getInitialState() {
