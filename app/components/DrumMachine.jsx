@@ -1,6 +1,52 @@
 import Grid from 'components/Grid';
 import React from 'react';
 
+var context = new AudioContext;
+
+class Drum {
+  constructor(context, buffer) {
+    this.context = context;
+    this.buffer = buffer;
+  };
+  setup() {
+    this.source = this.context.createBufferSource();
+    this.source.buffer = this.buffer;
+    this.source.connect(this.context.destination);
+  };
+  trigger(time) {
+    this.setup();
+    this.source.start(time);
+  };
+}
+
+var sampleLoader = function(url, context, callback) {
+  var request = new XMLHttpRequest();
+  request.open('get', url, true);
+  request.responseType = 'arraybuffer';
+  request.onload = function() {
+    context.decodeAudioData(request.response, function(buffer) {
+      callback(buffer);
+    });
+  };
+  request.send();
+};
+const drums = [];
+sampleLoader('./CB/CB.mp3', context, function(buffer) {
+  drums[0] = new Drum(context, buffer);
+});
+sampleLoader('./HT/HT00.mp3', context, function(buffer) {
+  drums[1] = new Drum(context, buffer);
+});
+sampleLoader('./CY/CY0000.mp3', context, function(buffer) {
+  drums[2] = new Drum(context, buffer);
+});
+sampleLoader('./SD/SD0000.mp3', context, function(buffer) {
+  drums[3] = new Drum(context, buffer);
+});
+sampleLoader('./bd/bd0000.mp3', context, function(buffer) {
+  drums[4] = new Drum(context, buffer);
+});
+
 const DrumMachine = React.createClass({
   getInitialState() {
     return {
@@ -12,7 +58,6 @@ const DrumMachine = React.createClass({
     };
   },
   btnClicked(row, step) {
-    console.log(row, step);
     this.state.sequence[row][step] = !this.state.sequence[row][step];
     this.setState({ sequence: this.state.sequence });
   },
@@ -38,7 +83,7 @@ const DrumMachine = React.createClass({
     const nextActiveStep = (this.state.activeStep + 1) % 16;
     for (let i=0; i<5; ++i) {
       if (this.state.sequence[i][nextActiveStep]) {
-        console.log(`Play instrument ${i}.`);
+        drums[i].trigger(context.currentTime);
       }
     }
     this.setState({
@@ -47,8 +92,6 @@ const DrumMachine = React.createClass({
     });
   },
   render() {
-    this.state.sequence[0][0] = true;
-    this.state.sequence[4][15] = true;
     return (
       <div>
         <button onClick={this.handleClickStartStop}>{this.state.isTicking ? 'Stop' : 'Start'}</button>
