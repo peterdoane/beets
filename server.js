@@ -35,9 +35,11 @@ app.use('/api', (req, res, next) => {
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
-const posts = require('./routes/posts');
+const beets = require('./routes/beets');
+const users = require('./routes/users');
 
-app.use('/api', posts);
+app.use('/api', beets);
+app.use('/api', users);
 
 app.use((_req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));

@@ -23,6 +23,6 @@ module.exports = {
   },
 
   server: {
-    port: 8001
+    command: 'nodemon --ignore app --ignore public server.js'
   }
 };
