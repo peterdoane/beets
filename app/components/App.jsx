@@ -18,7 +18,6 @@ import axios from 'axios';
 
 
 const App = React.createClass({
-
   render() {
     return (<div>
       <h1>Musical Chairs</h1>

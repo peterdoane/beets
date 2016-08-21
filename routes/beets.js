@@ -19,12 +19,12 @@ const db = {
   }]
 };
 
-router.get('/posts', (_req, res) => {
-  res.send(db.posts);
+router.get('/beets', (_req, res) => {
+  res.send(db.beets);
 });
 
-router.post('/posts', (req, res) => {
-  db.posts.push(req.body);
+router.post('/beets', (req, res) => {
+  db.beets.push(req.body);
 
   res.send(req.body);
 });

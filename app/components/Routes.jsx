@@ -11,7 +11,16 @@ const Routes = React.createClass({
         <IndexRoute component={Beets} />
         <Route component={DrumMachine} path="DrumMachine" />
       </Route>
-    </Router>;
+    </Router>
+
+    {React.cloneElement(this.props.children, {
+      decrementVotes: this.decrementVotes,
+      editing: this.state.editing,
+      incrementVotes: this.incrementVotes,
+      posts: this.state.posts,
+      stopEditingPost: this.stopEditingPost,
+      updatePost: this.updatePost
+    })};
   }
 });
 
