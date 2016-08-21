@@ -6,7 +6,6 @@ const Header = React.createClass({
       background: 'yellow',
       boxSizing: 'border-box',
       height: '200px',
-
     };
     return (
       <div id="header" style={style}>

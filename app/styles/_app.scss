@@ -1,0 +1,26 @@
+body {
+  background-color: #000;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.drum-button {
+  flex: 1 0 40px
+
+}
+
+.drum-machines {
+  display: flex
+}
+
+.machine-left {
+  flex:1;
+  margin-right: 15px;
+}
+
+.machine-right {
+  flex:1;
+}

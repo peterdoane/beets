@@ -12,13 +12,11 @@ const Btn = React.createClass({
       border: this.props.step === this.props.activeStep ? '5px solid green' : '1px solid green',
       boxSizing: 'border-box',
       height: '40px',
-      left: `${this.props.step * width}px`,
-      position: 'absolute',
-      top: `${this.props.row * height}px`,
-      width: '40px'
+      // left: `${this.props.step * width}px`,
+      // top: `${this.props.row * height}px`,
     };
     return (
-      <div onClick={this.handleClick} style={style}>
+      <div onClick={this.handleClick} style={style} className="drum-button">
 
       </div>
     );
