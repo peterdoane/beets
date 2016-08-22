@@ -3,10 +3,9 @@
 exports.up = function(knex) {
   return knex.schema.createTable('beets', (table) => {
     table.increments();
-    table.string('name').notNullable().defaultTo('');
+    table.string('title').notNullable().defaultTo('');
     table.string('image_url').notNullable().defaultTo('');
     table.string('sequence').notNullable().defaultTo('');
-    table.timestamps(true, true);
   });
 };
 

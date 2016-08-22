@@ -15,7 +15,6 @@ exports.up = function(knex) {
       .inTable('users')
       .onDelete('CASCADE')
       .index();
-    table.timestamps(true, true);
   });
 };
 

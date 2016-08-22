@@ -15,20 +15,19 @@
     "start": "brunch watch --server"
   },
   "dependencies": {
+    "axios": "^0.13.1",
+    "bcrypt": "^0.8.7",
+    "bcrypt-as-promised": "^1.1.0",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
+    "jsonwebtoken": "^7.1.9",
     "knex": "^0.11.10",
+    "material-ui": "^0.15.4",
     "morgan": "^1.7.0",
     "pg": "^6.1.0",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
     "react-router": "^2.7.0",
-    "axios": "^0.13.1",
-    "knex": "^0.11.10",
-    "material-ui": "^0.15.4",
-    "pg": "^6.1.0",
-    "react": "^15.3.0",
-    "react-dom": "^15.3.0",
     "react-tap-event-plugin": "^1.0.0"
   },
   "devDependencies": {

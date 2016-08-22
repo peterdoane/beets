@@ -4,6 +4,7 @@ const express = require('express');
 
 // eslint-disable-next-line new-cap
 const router = express.Router();
+const { checkAuth } = require('../middleware');
 
 const db = {
   beets: [{
@@ -23,7 +24,7 @@ router.get('/beets', (_req, res) => {
   res.send(db.beets);
 });
 
-router.post('/beets', (req, res) => {
+router.post('/beets', checkAuth, (req, res) => {
   db.beets.push(req.body);
 
   res.send(req.body);
