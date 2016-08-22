@@ -9,9 +9,11 @@ const Btn = React.createClass({
     const width = 50;
     const style = {
       background: this.props.btnState ? (this.props.step === this.props.activeStep ? 'green': 'red') : 'white',
-      border: this.props.step === this.props.activeStep ? '5px solid green' : '1px solid green',
+      border: this.props.step === this.props.activeStep ? '1px solid red' : '1px solid green',
       boxSizing: 'border-box',
-      height: '40px',
+      height: '5%',
+      width: '5%',
+      margin:'.125%'
       // left: `${this.props.step * width}px`,
       // top: `${this.props.row * height}px`,
     };

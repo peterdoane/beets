@@ -13,23 +13,12 @@ const App = React.createClass({
     <div>
       <h1>Musical Chairs</h1>
       {this.props.children}
-    </div>);
-    return (
+    </div>
+
       <div>
         <Header />
       </div>
-    <div>
-      <div className="drum-machines">
-        <div className="machine-left">
-          <DrumMachine  />
-        </div>
-
-        {/* <div className="machine-right">
-          <DrumMachine />
-        </div> */}
-      </div>
     </div>
-  </div>
     )
   }
 });

@@ -5,11 +5,20 @@ body {
 
 .button-wrapper {
   display: flex;
-  flex-wrap: wrap
+  flex-wrap: nowrap;
+  flex-direction: column;
+
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
 }
 
 .drum-button {
 flex: 1 0 6.25%;
+
 }
 
 .drum-machines {
@@ -17,7 +26,6 @@ flex: 1 0 6.25%;
   flex-direction: row;
   justify-content: space-around;
   align-content: space-between;
-
 }
 
 .machine-left {
