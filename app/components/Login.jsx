@@ -12,6 +12,9 @@ const Login = React.createClass({
       <div>
         <input type="password" placeholder="Password" />
       </div>
+      <div>
+        <button value="login-btn">Log In</button>
+      </div>
       <Link to="Signup">Need an account? Sign up here!</Link>
     </div>;
   }
