@@ -19,16 +19,17 @@ import axios from 'axios';
 
 const App = React.createClass({
   render() {
-    return (<div>
+    return (
+  <div>
+    <div>
       <h1>Musical Chairs</h1>
       {this.props.children}
     </div>);
     return (
       <div>
-      <div>
         <Header />
       </div>
-
+    <div>
       <div className="drum-machines">
         <div className="machine-left">
           <DrumMachine  />
@@ -38,7 +39,8 @@ const App = React.createClass({
           <DrumMachine />
         </div>
       </div>
-      </div>
+    </div>
+  </div>
     )
   }
 });

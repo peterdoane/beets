@@ -9,17 +9,19 @@ body {
 }
 
 .drum-button {
-  flex: 1 0 40px
-
+flex: 1 0 6.25%;
 }
 
 .drum-machines {
-  display: flex
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: space-between;
+
 }
 
 .machine-left {
   flex:1;
-  margin-right: 15px;
 }
 
 .machine-right {
