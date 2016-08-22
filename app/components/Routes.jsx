@@ -17,6 +17,9 @@ const Routes = React.createClass({
         <Route component={Studio} path="studio/:id" />
         <Route component={Signup} path="signup" />
         <Route component={Publish} path="publish" />
+
+        <Route component={DrumMachine} path="DrumMachine" />
+
       </Route>
     </Router>
   }

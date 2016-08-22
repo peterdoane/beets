@@ -1,22 +1,69 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
+import axios from 'axios';
 
 const Signup = React.createClass({
+  getInitialState() {
+    return {
+      username: '',
+      password: ''
+    }
+  },
+
+  handleUsername(event) {
+    const username = event.target.value;
+
+    this.setState({
+      username: username
+    });
+  },
+
+  handlePassword(event) {
+    const password = event.target.value;
+
+    this.setState({
+      password: password
+    })
+  },
+
+  handleRegister(event) {
+    axios.post('/api/users', {
+      username: this.state.username,
+      password: this.state.password
+    })
+    .then(() => {
+      this.props.router.push('/');
+    })
+    .catch((err) => {
+      throw err;
+    })
+  },
+
   render() {
     return <div>
       <h2>Sign Up Now</h2>
       <div>
-        <input type="text" placeholder="Choose username" />
+        <input
+          onChange={this.handleUsername}
+          placeholder="Choose username"
+          type="text"
+          value={this.state.username}
+        />
       </div>
       <div>
-        <input type="password" placeholder="Choose password" />
+        <input
+          onChange={this.handlePassword}
+          placeholder="Choose password"
+          type="password"
+          value={this.state.password}
+        />
       </div>
       <div>
-        <button value="signup-btn">Register</button>
+        <button onClick={this.handleRegister}>Register</button>
       </div>
       <Link to={'/'}>Nevermind</Link>
     </div>;
   }
 });
 
-export default Signup;
+export default withRouter(Signup);
