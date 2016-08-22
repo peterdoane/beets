@@ -22,6 +22,8 @@ switch (app.get('env')) {
 const path = require('path');
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use("/api/samples", express.static(path.join(__dirname, 'app/assets')));
+
 
 // CRSF protection
 app.use('/api', (req, res, next) => {

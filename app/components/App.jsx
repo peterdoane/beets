@@ -4,17 +4,6 @@ import Grid from 'components/Grid';
 import Knobs from 'components/Knobs';
 import React from 'react';
 import { withRouter } from 'react-router';
-import axios from 'axios';
-
-//
-// axios.get('./bd/bd0000.mp3')
-//   .then(function (response) {
-//     debugger;
-//     console.log(response);
-//   })
-//   .catch(function (error) {
-//     console.log(error);
-//   });
 
 
 const App = React.createClass({
@@ -35,9 +24,9 @@ const App = React.createClass({
           <DrumMachine  />
         </div>
 
-        <div className="machine-right">
+        {/* <div className="machine-right">
           <DrumMachine />
-        </div>
+        </div> */}
       </div>
     </div>
   </div>
