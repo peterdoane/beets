@@ -32,12 +32,12 @@ return axios.get(f, { responseType: 'arraybuffer'})
 // another one to returna list of buffers ...
   const drums = allBuffer.map(b => {return new Drum (context, b)})
 }).catch(e => {
-// catch err
+
 });
 */
 
 const drums = [];
-axios.get('/api/samples/bd/bd0000.mp3', { responseType: 'arraybuffer'})
+axios.get('/api/samples/bd/bd2510.mp3', { responseType: 'arraybuffer'})
   .then(function (response) {
     context.decodeAudioData(response.data, function(buffer) {
       drums[0] = new Drum(context, buffer);
@@ -48,7 +48,7 @@ axios.get('/api/samples/bd/bd0000.mp3', { responseType: 'arraybuffer'})
     console.log(error);
   });
 
-  axios.get('/api/samples/SD/SD0000.mp3', { responseType: 'arraybuffer'})
+  axios.get('/api/samples/SD/SD0010.mp3', { responseType: 'arraybuffer'})
     .then(function (response) {
       context.decodeAudioData(response.data, function(buffer) {
         drums[1] = new Drum(context, buffer);
@@ -59,7 +59,7 @@ axios.get('/api/samples/bd/bd0000.mp3', { responseType: 'arraybuffer'})
       console.log(error);
     });
 
-  axios.get('/api/samples/LC/LC00.WAV', { responseType: 'arraybuffer'})
+  axios.get('/api/samples/LT/LT50.WAV', { responseType: 'arraybuffer'})
       .then(function (response) {
         context.decodeAudioData(response.data, function(buffer) {
           drums[2] = new Drum(context, buffer);
@@ -70,7 +70,7 @@ axios.get('/api/samples/bd/bd0000.mp3', { responseType: 'arraybuffer'})
         console.log(error);
       });
 
-  axios.get('/api/samples/MC/MC00.WAV', { responseType: 'arraybuffer'})
+  axios.get('/api/samples/MT/MT75.WAV', { responseType: 'arraybuffer'})
       .then(function (response) {
         context.decodeAudioData(response.data, function(buffer) {
           drums[3] = new Drum(context, buffer);
@@ -81,10 +81,10 @@ axios.get('/api/samples/bd/bd0000.mp3', { responseType: 'arraybuffer'})
         console.log(error);
       });
 
-  axios.get('/api/samples/HC/HC00.WAV', { responseType: 'arraybuffer'})
+  axios.get('/api/samples/HT/HT75.mp3', { responseType: 'arraybuffer'})
       .then(function (response) {
         context.decodeAudioData(response.data, function(buffer) {
-          drums[4] = new Drum(context, buffer);
+          drums[3] = new Drum(context, buffer);
         });
 
         })
@@ -95,7 +95,7 @@ axios.get('/api/samples/bd/bd0000.mp3', { responseType: 'arraybuffer'})
   axios.get('/api/samples/RS/RS.WAV', { responseType: 'arraybuffer'})
       .then(function (response) {
         context.decodeAudioData(response.data, function(buffer) {
-          drums[5] = new Drum(context, buffer);
+          drums[4] = new Drum(context, buffer);
         });
 
         })
@@ -106,7 +106,7 @@ axios.get('/api/samples/bd/bd0000.mp3', { responseType: 'arraybuffer'})
   axios.get('/api/samples/CP/CP.WAV', { responseType: 'arraybuffer'})
       .then(function (response) {
         context.decodeAudioData(response.data, function(buffer) {
-          drums[6] = new Drum(context, buffer);
+          drums[5] = new Drum(context, buffer);
         });
 
         })
@@ -117,7 +117,7 @@ axios.get('/api/samples/bd/bd0000.mp3', { responseType: 'arraybuffer'})
   axios.get('/api/samples/CB/CB.mp3', { responseType: 'arraybuffer'})
       .then(function (response) {
         context.decodeAudioData(response.data, function(buffer) {
-          drums[7] = new Drum(context, buffer);
+          drums[6] = new Drum(context, buffer);
         });
 
         })
@@ -125,7 +125,7 @@ axios.get('/api/samples/bd/bd0000.mp3', { responseType: 'arraybuffer'})
         console.log(error);
       });
 
-  axios.get('/api/samples/CY/CY0000.mp3', { responseType: 'arraybuffer'})
+  axios.get('/api/samples/CY/CY1000.mp3', { responseType: 'arraybuffer'})
       .then(function (response) {
         context.decodeAudioData(response.data, function(buffer) {
           drums[8] = new Drum(context, buffer);
@@ -136,7 +136,7 @@ axios.get('/api/samples/bd/bd0000.mp3', { responseType: 'arraybuffer'})
         console.log(error);
       });
 
-  axios.get('/api/samples/OH/OH00.WAV', { responseType: 'arraybuffer'})
+  axios.get('/api/samples/OH/OH25.WAV', { responseType: 'arraybuffer'})
       .then(function (response) {
         context.decodeAudioData(response.data, function(buffer) {
           drums[9] = new Drum(context, buffer);
@@ -157,30 +157,6 @@ axios.get('/api/samples/bd/bd0000.mp3', { responseType: 'arraybuffer'})
       .catch(function (error) {
         console.log(error);
       });
-
-  axios.get('/api/samples/CL/CL.WAV', { responseType: 'arraybuffer'})
-      .then(function (response) {
-        context.decodeAudioData(response.data, function(buffer) {
-          drums[11] = new Drum(context, buffer);
-        });
-
-        })
-      .catch(function (error) {
-        console.log(error);
-      });
-
-  axios.get('/api/samples/LT/LT00.WAV', { responseType: 'arraybuffer'})
-      .then(function (response) {
-        context.decodeAudioData(response.data, function(buffer) {
-          drums[12] = new Drum(context, buffer);
-        });
-
-        })
-      .catch(function (error) {
-        console.log(error);
-      });
-
-
 
 //
 // var sampleLoader = function(url, context, callback) {
