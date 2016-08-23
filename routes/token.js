@@ -27,16 +27,21 @@ router.post('/token', (req, res, next) => {
         expiresIn: '3h'
       });
 
-      res.cookie('accessToken', token, {
+      res.cookie('mc_accessToken', token, {
         httpOnly: true,
         expire: expiry,
         secure: router.get('env') === 'production'
       });
 
-      res.cookie('loggedIn', true, {
+      res.cookie('mc_loggedIn', true, {
         expires: expiry,
         secure: router.get('env') === 'production'
       });
+
+      res.cookie('mc_username', user.username, {
+        expires: expiry,
+        secure: router.get('env') === 'production'
+      })
 
       res.sendStatus(200);
     })
@@ -49,8 +54,9 @@ router.post('/token', (req, res, next) => {
 });
 
 router.delete('/token', (req, res) => {
-  res.clearCookie('accessToken');
-  res.clearCookie('loggedIn');
+  res.clearCookie('mc_accessToken');
+  res.clearCookie('mc_loggedIn');
+  res.clearCookie('mc_username');
 
   res.sendStatus(200);
 });

@@ -15,7 +15,7 @@ const LoggedIn = React.createClass({
 
   render() {
     return <div>
-      <h3>Hello...YOU</h3>
+      <h3>What Up {this.props.username}?!</h3>
       <h4>Your Songs</h4>
       <button onClick={this.handleLogOut}>Log Out</button>
     </div>
