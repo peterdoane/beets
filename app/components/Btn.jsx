@@ -39,8 +39,8 @@ const Btn = React.createClass({
                   <use href="#path-1"></use>
               </mask>
           </defs>
-          <g id="Group-5" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(485.000000, 417.000000)">
-              <use id="Rectangle-2" stroke="#FFFFFF" mask="url(#mask-2)" stroke-width="2" fill="#FFFFFF" href="#path-1"></use>
+          <g id="Group-5" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd" transform="translate(485.000000, 417.000000)">
+              <use id="Rectangle-2" stroke="#FFFFFF" mask="url(#mask-2)" strokeWidth="2" fill="#FFFFFF" href="#path-1"></use>
               <path d="M0.158536585,6.9875 L12.8414634,6.9875" id="Line" stroke="#979797" strokeLinecap="square" opacity="0.316056437"></path>
               <ellipse id="Oval-2" stroke="#000000" fill={fill} cx="6.5" cy="3.4125" rx="1.74390244" ry="1.7875"></ellipse>
           </g>

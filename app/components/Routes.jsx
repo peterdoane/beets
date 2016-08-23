@@ -7,7 +7,6 @@ import Nav from 'components/Nav';
 import Main from 'components/Main';
 import Studio from 'components/Studio';
 import Signup from 'components/Signup';
-import Publish from 'components/Publish';
 
 const Routes = React.createClass({
   render() {
@@ -16,8 +15,6 @@ const Routes = React.createClass({
         <IndexRoute component={Main} />
         <Route component={Studio} path="studio/:id" />
         <Route component={Signup} path="signup" />
-        <Route component={Publish} path="publish" />
-
         <Route component={DrumMachine} path="DrumMachine" />
 
       </Route>

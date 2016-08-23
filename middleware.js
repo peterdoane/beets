@@ -1,7 +1,9 @@
 const jwt = require('jsonwebtoken');
 
 const checkAuth = function(req, res, next) {
-  jwt.verify(req.cookies.accessToken, 'SECRET_KEY', (err, decoded) => {
+  console.log(req.cookies);
+  jwt.verify(req.cookies.mc_accessToken, process.env.JWT_SECRET, (err, decoded) => {
+    console.log(err, decoded);
     if (err) {
       return res.sendStatus(401);
     }

@@ -4,8 +4,9 @@ import Btn from 'components/Btn';
 const Grid = React.createClass({
     renderRow(row){
         const btnRow = [];
-        const drumName = ['BassDrum', 'SnareDrum', 'LowTom', 'MidTom', 'HighTom', 'RimShot', 'handClaP', 'CowBell', 'Cymbal', 'OpenHat', 'ClosedHat'];
-        btnRow.push(<span>{drumName[row]}</span>);
+        const drumName = ['BD', 'CB', 'CH', 'CL', 'CP', 'CY', 'HC', 'HT', 'JS', 'LC', 'LT'];
+
+        btnRow.push(<span key={drumName[row]}>{drumName[row]}</span>);
         for (let step=0; step<16; ++step) {
 
           btnRow.push(
