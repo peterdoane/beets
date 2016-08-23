@@ -1,5 +1,9 @@
 'use strict';
 
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
 const express = require('express');
 const app = express();
 
@@ -39,9 +43,11 @@ app.use(bodyParser.json());
 
 const beets = require('./routes/beets');
 const users = require('./routes/users');
+const token = require('./routes/token');
 
 app.use('/api', beets);
 app.use('/api', users);
+app.use('/api', token);
 
 app.use((_req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));

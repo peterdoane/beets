@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 import Signup from 'components/Signup';
+import axios from 'axios';
 
 const Login = React.createClass({
   getInitialState(){
@@ -27,7 +28,16 @@ const Login = React.createClass({
   },
 
   handleLogin(event) {
-    console.log(this.state.username, this.state.password);
+    axios.post('/api/token', {
+      username: this.state.username,
+      password: this.state.password
+    })
+    .then((data) => {
+      this.props.router.push('/');
+    })
+    .catch((err) => {
+      throw err;
+    })
   },
 
   render() {
@@ -57,4 +67,4 @@ const Login = React.createClass({
   }
 });
 
-export default Login;
+export default withRouter(Login);
