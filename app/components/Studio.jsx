@@ -16,17 +16,3 @@ const Studio = React.createClass({
 });
 
 export default Studio;
-
-<div>BD</div>
-<div>CB</div>
-<div>CH</div>
-<div>CL</div>
-<div>CP</div>
-<div>CY</div>
-<div>HC</div>
-<div>HT</div>
-<div>JS</div>
-<div>LC</div>
-<div>LT</div>
-<div>MA</div>
-<div>MC</div>

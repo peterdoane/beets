@@ -271,7 +271,7 @@ const DrumMachine = React.createClass({
     return (
       <div>
         <button onClick={this.handleClickStartStop}>{this.state.isTicking ? 'Stop' : 'Start'}</button>
-        <input onChange={this.handleChange} type='number' value={this.state.bpm}/>
+        <input className="tempo" onChange={this.handleChange} type='number' value={this.state.bpm}/>
         <Grid
           activeStep={this.state.activeStep}
           btnClicked={this.btnClicked}

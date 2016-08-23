@@ -1,11 +1,12 @@
 body {
   background-color: #fff;
+  // font-family: 'RolandTR808TrueType Font'
   font-family: 'Monoton', cursive;
 }
 
 .button-wrapper {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   flex-direction: column;
 
 }
@@ -14,6 +15,7 @@ body {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
+  align-items: stretch;
 }
 
 .drum-button {
@@ -35,3 +37,11 @@ flex: 1 0 6.25%;
 .machine-right {
   flex:1;
 }
+
+// .tempo {
+//   display:flex;
+// flex-direction: column;
+// flex-wrap: wrap;
+//
+//
+// }

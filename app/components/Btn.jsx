@@ -5,12 +5,12 @@ const Btn = React.createClass({
     this.props.btnClicked(this.props.row, this.props.step);
   },
   render() {
-    const height = 50;
-    const width = 50;
+    const height = 40;
+    const width = 40;
     const style = {
       background: this.props.btnState ? (this.props.step === this.props.activeStep ? 'green': 'red') : 'white',
       border: this.props.step === this.props.activeStep ? '1px solid red' : '1px solid green',
-      boxSizing: 'border-box',
+      boxSizing: 'unset',
       height: '5%',
       width: '5%',
       margin:'.125%'

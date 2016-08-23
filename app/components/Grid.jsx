@@ -4,8 +4,12 @@ import Btn from 'components/Btn';
 const Grid = React.createClass({
     renderRow(row){
         const btnRow = [];
+        const drumName = ['BD', 'CB', 'CH', 'CL', 'CP', 'CY', 'HC', 'HT', 'JS', 'LC', 'LT'];
+        btnRow.push(<span>{drumName[row]}</span>);
         for (let step=0; step<16; ++step) {
+
           btnRow.push(
+
             <Btn
               activeStep={this.props.activeStep}
               btnClicked={this.props.btnClicked}
