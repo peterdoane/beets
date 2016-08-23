@@ -20,6 +20,22 @@ class Drum {
   };
 }
 
+//
+/*
+see if axios has a method to resolve all the requests ...
+axios parallel api (later optimizations)
+const files = ['f1', 'f2', 'f3'];
+
+q.all(files.map(f => {
+return axios.get(f, { responseType: 'arraybuffer'})
+})).then(allRawData => {
+// another one to returna list of buffers ...
+  const drums = allBuffer.map(b => {return new Drum (context, b)})
+}).catch(e => {
+// catch err
+});
+*/
+
 const drums = [];
 axios.get('/api/samples/bd/bd0000.mp3', { responseType: 'arraybuffer'})
   .then(function (response) {
@@ -278,6 +294,7 @@ const DrumMachine = React.createClass({
   },
   render() {
     return (
+    <div>
       <div>
         <button onClick={this.handleClickStartStop}>{this.state.isTicking ? 'Stop' : 'Start'}</button>
         <input className="tempo" onChange={this.handleChangeBpm} type='number' value={this.state.bpm}/>
@@ -285,6 +302,8 @@ const DrumMachine = React.createClass({
           <option value={0}>0</option>
           <option value={1}>1</option>
         </select>
+      </div>
+      <div className="drum-machines">
         <Grid
           activeStep={this.state.activeStep}
           activePattern={this.state.activePattern}
@@ -302,6 +321,7 @@ const DrumMachine = React.createClass({
           sequence={this.state.sequence[1]}
         />
       </div>
+    </div>
     );
   }
 });

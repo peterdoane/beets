@@ -1,49 +1,62 @@
+// @font-face {
+//     font-family: 'rolandregular';
+//     src: url('/assets/fonts/rolandregular.woff2') format('woff2'),
+//          url('/assets/fonts/rolandregular.woff') format('woff');
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
+
 body {
   background-color: #fff;
-  // font-family: 'RolandTR808TrueType Font'
-  font-family: 'Monoton', cursive;
+  font-family: 'rolandregular';
+
 }
 
 .button-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+  color:inherit;
+  // display: flex;
+  // flex-wrap: wrap;
+  // flex-direction: column;
 
 }
 
 .button-row {
+  color:inherit;
   display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  align-items: stretch;
+
+  // flex-wrap: nowrap;
+  // flex-direction: row;
+  // align-items: stretch;
 }
 
 .drum-button {
-flex: 1 0 6.25%;
-
+  color:inherit;
+  flex: 1 ;
 }
 
 .drum-machines {
-  display:flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-content: space-between;
+    display: flex;
+    width: 1000px;
+    margin: 0 auto;
 }
 
 .machine-left {
+  color:inherit;
   flex:1;
   margin-right: 15px;
-  background: pink;
+  // flex:1;
+  // margin-right: 15px;
+  // background: pink;
 }
 .machine-right {
+  color:inherit;
   flex:1;
-  background: cyan;
+  // flex:1;
+  // background: cyan;
 }
 
-// .tempo {
-//   display:flex;
-// flex-direction: column;
-// flex-wrap: wrap;
-//
-//
-// }
+.button-row > span {
+    color: inherit;
+    flex: 1;
+}

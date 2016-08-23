@@ -1,7 +1,6 @@
 import DrumMachine from 'components/DrumMachine';
 import Header from 'components/Header';
 import Grid from 'components/Grid';
-import Knobs from 'components/Knobs';
 import React from 'react';
 import { withRouter } from 'react-router';
 
