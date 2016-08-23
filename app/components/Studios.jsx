@@ -12,11 +12,16 @@ const studios =[{
 const Studios = React.createClass({
   render() {
     return <div>
+    <h1>Enter a Studio</h1>
+    <ul>
       {studios.map((element, index) => {
-        return <Link key={index} to={`/Studio/${element.name}`}>
-        {`${element.name}`}
-        </Link>;
-      })};
+        return <li key={index}>
+          <Link key={index} to={`/Studio/${element.name}`}>
+            {`${element.name}`}
+          </Link>
+        </li>
+      })}
+    </ul>
     </div>;
   }
 });

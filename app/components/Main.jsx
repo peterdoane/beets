@@ -9,8 +9,8 @@ const Main = React.createClass({
   render() {
     return <div>
       <Beets />
-      <Studios />
       {cookie.load('mc_loggedIn') ? <LoggedIn username={cookie.load('mc_username')} /> : <Login />}
+      {cookie.load('mc_loggedIn') ? <Studios /> : null}
     </div>
   }
 });
