@@ -8,8 +8,7 @@ const Studio = React.createClass({
     return <div>
       <h1>You Are in Studio {params.id}</h1>
       <div className="drum-machines">
-        <DrumMachine className="machine-left"/>
-        <DrumMachine className="machine-right"/>
+        <DrumMachine/>
       </div>
     </div>
   }

@@ -2,14 +2,15 @@ import React from 'react';
 
 const Btn = React.createClass({
   handleClick() {
-    this.props.btnClicked(this.props.row, this.props.step);
+    this.props.btnClicked(this.props.pattern, this.props.row, this.props.step);
   },
   render() {
     const height = 40;
     const width = 40;
+    const active = (this.props.step === this.props.activeStep && this.props.pattern === this.props.activePattern);
     const style = {
-      background: this.props.btnState ? (this.props.step === this.props.activeStep ? 'green': 'red') : 'white',
-      border: this.props.step === this.props.activeStep ? '1px solid red' : '1px solid green',
+      background: this.props.btnState ? (active ? 'green': 'red') : 'white',
+      border: active ? '1px solid red' : '1px solid green',
       boxSizing: 'unset',
       height: '5%',
       width: '5%',

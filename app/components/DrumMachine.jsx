@@ -226,15 +226,19 @@ axios.get('/api/samples/bd/bd0000.mp3', { responseType: 'arraybuffer'})
 const DrumMachine = React.createClass({
   getInitialState() {
     return {
+      activePattern: 1,
       activeStep: -1,
       bpm: 120,
       interval: null,
       isTicking: false,
-      sequence: [[], [], [], [], [],[], [], [], [], [],[], [], []]
+      sequence: [
+        [[], [], [], [], [],[], [], [], [], [],[], [], []],
+        [[], [], [], [], [],[], [], [], [], [],[], [], []]
+      ]
     };
   },
-  btnClicked(row, step) {
-    this.state.sequence[row][step] = !this.state.sequence[row][step];
+  btnClicked(pattern, row, step) {
+    this.state.sequence[pattern][row][step] = !this.state.sequence[pattern][row][step];
     this.setState({ sequence: this.state.sequence });
   },
   handleChange(event) {
@@ -257,8 +261,10 @@ const DrumMachine = React.createClass({
   },
   tick() {
     const nextActiveStep = (this.state.activeStep + 1) % 16;
-    for (let i=0; i<this.state.sequence.length; ++i) {
-      if (this.state.sequence[i][nextActiveStep]) {
+    const activeSequence = this.state.sequence[this.state.activePattern];
+
+    for (let i=0; i<activeSequence.length; ++i) {
+      if (activeSequence[i][nextActiveStep]) {
         drums[i].trigger(context.currentTime);
       }
     }
@@ -272,10 +278,21 @@ const DrumMachine = React.createClass({
       <div>
         <button onClick={this.handleClickStartStop}>{this.state.isTicking ? 'Stop' : 'Start'}</button>
         <input className="tempo" onChange={this.handleChange} type='number' value={this.state.bpm}/>
+
         <Grid
           activeStep={this.state.activeStep}
+          activePattern={this.state.activePattern}
           btnClicked={this.btnClicked}
-          sequence={this.state.sequence}
+          pattern={0}
+          sequence={this.state.sequence[0]}
+        />
+        <Grid
+          activeStep={this.state.activeStep}
+          activePattern={this.state.activePattern}
+          btnClicked={this.btnClicked}
+          className="machine-left"
+          pattern={1}
+          sequence={this.state.sequence[1]}
         />
       </div>
     );

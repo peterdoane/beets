@@ -12,8 +12,10 @@ const Grid = React.createClass({
 
             <Btn
               activeStep={this.props.activeStep}
+              activePattern={this.props.activePattern}
               btnClicked={this.props.btnClicked}
               btnState={this.props.sequence[row][step]}
+              pattern={this.props.pattern}
               row={row}
               step={step}
               key={step}
