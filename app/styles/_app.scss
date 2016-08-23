@@ -33,9 +33,11 @@ flex: 1 0 6.25%;
 .machine-left {
   flex:1;
   margin-right: 15px;
+  background: pink;
 }
 .machine-right {
   flex:1;
+  background: cyan;
 }
 
 // .tempo {

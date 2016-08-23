@@ -37,7 +37,7 @@ const Grid = React.createClass({
       border: '1px solid green',
     }
     return (
-      <div className="button-wrapper" style = { style }>
+      <div className={'button-wrapper ' + this.props.className} style = { style }>
         {this.renderRows()}
       </div>
     );

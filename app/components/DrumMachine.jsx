@@ -226,7 +226,7 @@ axios.get('/api/samples/bd/bd0000.mp3', { responseType: 'arraybuffer'})
 const DrumMachine = React.createClass({
   getInitialState() {
     return {
-      activePattern: 1,
+      activePattern: 0,
       activeStep: -1,
       bpm: 120,
       interval: null,
@@ -241,8 +241,11 @@ const DrumMachine = React.createClass({
     this.state.sequence[pattern][row][step] = !this.state.sequence[pattern][row][step];
     this.setState({ sequence: this.state.sequence });
   },
-  handleChange(event) {
+  handleChangeBpm(event) {
     this.setState({ bpm: event.target.value });
+  },
+  handleChangePattern(event) {
+    this.setState({ activePattern: +event.target.value });
   },
   handleClickStartStop() {
     if (this.state.isTicking) {
@@ -277,12 +280,16 @@ const DrumMachine = React.createClass({
     return (
       <div>
         <button onClick={this.handleClickStartStop}>{this.state.isTicking ? 'Stop' : 'Start'}</button>
-        <input className="tempo" onChange={this.handleChange} type='number' value={this.state.bpm}/>
-
+        <input className="tempo" onChange={this.handleChangeBpm} type='number' value={this.state.bpm}/>
+        <select onChange={this.handleChangePattern} value={this.state.activePattern}>
+          <option value={0}>0</option>
+          <option value={1}>1</option>
+        </select>
         <Grid
           activeStep={this.state.activeStep}
           activePattern={this.state.activePattern}
           btnClicked={this.btnClicked}
+          className="machine-left"
           pattern={0}
           sequence={this.state.sequence[0]}
         />
@@ -290,7 +297,7 @@ const DrumMachine = React.createClass({
           activeStep={this.state.activeStep}
           activePattern={this.state.activePattern}
           btnClicked={this.btnClicked}
-          className="machine-left"
+          className="machine-right"
           pattern={1}
           sequence={this.state.sequence[1]}
         />
