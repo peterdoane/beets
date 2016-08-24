@@ -58,7 +58,6 @@ const Studio = React.createClass({
       <h1 className="studio-title">You Are in {params.id}</h1>
       <Knob />
       <div>
-        <Knob />
         <DrumMachine />
       </div>
       <div>
