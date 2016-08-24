@@ -3,6 +3,7 @@ import cookie from 'react-cookie';
 import DrumMachine from 'components/DrumMachine';
 import Knob from 'components/Knob';
 import axios from 'axios';
+import { notify } from 'react-notify-toast';
 
 var Image = require('react-image-component')
 // React.renderComponent(<Image src='./photos/blackbird.jpg')
@@ -102,6 +103,9 @@ const Studio = React.createClass({
     })
     .then(() => {
       console.log(this.state);
+      notify.show('Your beet is now published!', 'success', 10000);
+      document.getElementById('input-title').value = '';
+      document.getElementById('input-image-url').value = '';
     })
     .catch((err) => {
       throw err;
@@ -132,6 +136,7 @@ const Studio = React.createClass({
               onChange={this.handleTitle}
               placeholder="Title"
               type="text"
+              id="input-title"
             />
           </div>
           <div>
@@ -139,6 +144,7 @@ const Studio = React.createClass({
               onChange={this.handleImageUrl}
               placeholder="Album Image URL"
               type="text"
+              id="input-image-url"
             />
           </div>
           <button onClick={this.handlePublish}>Publish Beet</button>

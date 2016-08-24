@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import axios from 'axios';
+import { notify } from 'react-notify-toast';
 
 const Signup = React.createClass({
   getInitialState() {
@@ -33,6 +34,7 @@ const Signup = React.createClass({
     })
     .then(() => {
       this.props.router.push('/');
+      notify.show('Signup successful! You may now log in.', 'success', 10000);
     })
     .catch((err) => {
       throw err;
