@@ -7,9 +7,9 @@ const Btn = React.createClass({
   handleClick() {
     this.props.btnClicked(this.props.pattern, this.props.row, this.props.step);
     this.setState({isBtnActive:!this.state.isBtnActive});
-    console.log(this.props.isBtnActive);
-    console.log('step value:', this.props.step, 'activeStep: ', this.props.activeStep);
-    console.log('pattern: ', this.props.pattern, 'activePattern: ', this.props.activePattern);
+    // console.log(this.state.isBtnActive);
+    // console.log('step value:', this.props.step, 'activeStep: ', this.props.activeStep);
+    // console.log('pattern: ', this.props.pattern, 'activePattern: ', this.props.activePattern);
   },
   isActive() {
     return this.props.step === this.props.activeStep && this.props.pattern === this.props.activePattern;

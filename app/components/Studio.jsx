@@ -1,8 +1,9 @@
-import React from 'react';
+import axios from 'axios';
 import cookie from 'react-cookie';
+import Chat from 'components/Chat';
 import DrumMachine from 'components/DrumMachine';
 import Knob from 'components/Knob';
-import axios from 'axios';
+import React from 'react';
 
 var Image = require('react-image-component')
 // React.renderComponent(<Image src='./photos/blackbird.jpg')
@@ -30,7 +31,6 @@ const Studio = React.createClass({
     });
 
     socket.on('success', (data) => {
-      console.log('success', data.usernames.map((name) => ({ username: name })));
       this.setState({
         collaborators: data.usernames.map((name) => ({ username: name }))
       });
@@ -70,7 +70,6 @@ const Studio = React.createClass({
       username: this.state.username,
       buttonClick: { pattern: pattern, row: row, step: step }
     });
-    console.log(pattern, row, step);
   },
 
   handleTitle(event) {
@@ -122,7 +121,7 @@ const Studio = React.createClass({
         <div>
           <h3>Collaborators</h3>
           <ul>
-            {this.state.collaborators.map((elem) => <li>{elem.username}</li>)}
+            {this.state.collaborators.map((elem, index) => <li key={index}>{elem.username}</li>)}
           </ul>
         </div>
         <h3>Add Beet Info</h3>
@@ -144,6 +143,7 @@ const Studio = React.createClass({
           <button onClick={this.handlePublish}>Publish Beet</button>
         </form>
       </div>
+      <Chat socket={socket} studio={this.state.studio} username={this.state.username}/>
     </div>
   }
 });

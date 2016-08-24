@@ -91,10 +91,12 @@ io.sockets.on('connection', (socket) => {
   });
 
   socket.on('chat message', (data) => {
+    console.log('chat received', data);
     io.sockets.in(data.studio).emit('post message', data);
   });
 
   socket.on('sync', (data) => {
+    console.log('sync', data);
     io.sockets.in(data.studio).emit('sync', data);
   });
 
