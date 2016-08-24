@@ -42,7 +42,7 @@ const Signup = React.createClass({
   },
 
   render() {
-    return <div className="component-signup">
+    return <div className="component signup">
       <h2>Sign Up Now</h2>
       <div>
         <input

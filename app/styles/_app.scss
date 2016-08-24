@@ -184,8 +184,9 @@ body {
 // Home Page Styles //
 //////////////////////
 
-.component-main {
+.main {
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -194,15 +195,13 @@ body {
 //   background-size: cover;
 // }
 
-.component-login, .component-logged-in {
+.component {
   background-color: #EABE7C;
-  height: 400px;
-  width: 400px;
   margin: 20px;
   padding: 20px;
 }
 
-.component-beets {
+.beets {
   background-color: #EABE7C;
   height: 400px;
   width: 600px;
@@ -210,11 +209,8 @@ body {
   padding: 20px;
 }
 
-.component-studios {
-  background-color: #EABE7C;
+.studios {
   width: 100%;
-  margin: 20px;
-  padding: 20px;
   flex-basis: 200px;
 }
 
@@ -240,11 +236,4 @@ body {
 ul {
   list-style: none;
   display: inline-block;
-}
-
-.publish-form {
-  background-color: #EABE7C;
-  margin: 20px;
-  padding: 20px;
-  flex-basis: 200px;
 }

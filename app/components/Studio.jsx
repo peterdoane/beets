@@ -120,7 +120,7 @@ const Studio = React.createClass({
       <div>
         <DrumMachine ref={'drumMachine'} buttonClick={this.buttonClick} />
       </div>
-      <div className="publish-form">
+      <div className="component">
         <h2>Publish Beet</h2>
         <div>
           <h3>Collaborators</h3>

@@ -21,7 +21,7 @@ const Beets = React.createClass({
   render() {
     const beets = this.state.beets;
 
-    return <div className="component-beets">
+    return <div className="component beets">
       <h1>Recent Beets</h1>
       <ul>
       {beets.map((beet, index) => {

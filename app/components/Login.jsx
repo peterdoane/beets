@@ -43,7 +43,7 @@ const Login = React.createClass({
   },
 
   render() {
-    return <div className="component-login">
+    return <div className="component login">
       <h2>Log In!!!</h2>
       <div>
         <input
