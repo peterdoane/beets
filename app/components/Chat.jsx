@@ -33,8 +33,8 @@ const Chat = React.createClass({
 
   render() {
     return (
-      <div id={'chatContainer'}>
-        <div id={'messageContainer'}>
+      <div id={'chat-container'}>
+        <div id={'message-container'}>
           <ul id={"messages"}>{this.state.messages}</ul>
         </div>
 

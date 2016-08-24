@@ -10,6 +10,17 @@ body {
   font: 13px Helvetica, Arial;
 }
 
+#chat-container {
+  width: 40rem;
+  height: 10rem;
+  position: relative;
+  background: white;
+}
+
+#message-container {
+  height: 8rem;
+}
+
 form {
   background: #000;
   padding: 3px;
@@ -31,7 +42,7 @@ form button { width: 9%;
 }
 
 #container {
-  position: fixed;
+  // position: fixed;
   bottom: 0px;
   width: 100%
 }
