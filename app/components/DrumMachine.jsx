@@ -234,12 +234,14 @@ const DrumMachine = React.createClass({
     this.setState({ sequence: this.state.sequence });
   },
   handleChangeBpm(event) {
-    this.setState({ bpm: event.target.value });
+    console.log(this.state.bpm);
+    this.refs.grid.setState({ bpm: event.target.value });
   },
   handleChangePattern(event) {
     this.setState({ activePattern: +event.target.value });
   },
   handleClickStartStop() {
+
     if (this.state.isTicking) {
       clearTimeout(this.state.interval);
       this.setState({
@@ -251,7 +253,7 @@ const DrumMachine = React.createClass({
       this.setState({
         isTicking: true
       });
-      this.tick();
+      this.refs.grid.tick()
     }
   },
   tick() {
@@ -263,10 +265,12 @@ const DrumMachine = React.createClass({
         drums[i].trigger(context.currentTime);
       }
     }
-    this.setState({
-      activeStep: nextActiveStep,
-      interval: setTimeout(this.tick, 60000 / this.state.bpm / 4)
-    });
+    // var ticker = 60000 / this.state.bpm / 4;
+    // this.setState({
+    //   activeStep: nextActiveStep,
+    //   interval: setTimeout(this.tick, ticker)
+    // });
+    // console.log(ticker);
   },
   render() {
     return (
@@ -281,6 +285,7 @@ const DrumMachine = React.createClass({
       </div>
       <div className="drum-machines">
         <Grid
+          ref="grid"
           activeStep={this.state.activeStep}
           activePattern={this.state.activePattern}
           btnClicked={this.btnClicked}

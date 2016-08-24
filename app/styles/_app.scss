@@ -111,12 +111,12 @@ body {
 
 .drum-button-yellow {
   @extend .drum-button;
-  background-color: yellow;
+  fill: yellow;
 }
 
 .drum-button-white {
   @extend .drum-button;
-  background-color: white;
+  fill: white;
 }
 
 .drum-button-red {
