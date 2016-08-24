@@ -35,7 +35,7 @@ const Login = React.createClass({
     })
     .then((data) => {
       this.props.router.push('/');
-      notify.show('You are now logged in!', 'success', 10000);
+      notify.show('You are now logged in!', 'success', 5000);
     })
     .catch((err) => {
       throw err;
