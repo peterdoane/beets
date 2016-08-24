@@ -6,6 +6,8 @@ if (process.env.NODE_ENV !== 'production') {
 
 const express = require('express');
 const app = express();
+const server = require('http').Server(app);
+const io = require('socket.io')(server);
 
 app.disable('x-powered-by');
 
@@ -65,8 +67,30 @@ app.use((err, _req, res, _next) => {
   res.sendStatus(500);
 });
 
+// socket.io stuff
+
+io.sockets.on('connection', (socket) => {
+  console.log('a user connected');
+
+  socket.on('subscribe', function(data) {
+    console.log('subscribe', data);
+    const { username, chatroom } = data;
+
+    socket.join(chatroom);
+    io.sockets.in(chatroom).emit('success', { username, chatroom });
+  });
+
+  socket.on('chat message', (data) => {
+    io.sockets.in(data.chatroom).emit('post message', data);
+  });
+
+  socket.on('disconnect', () => {
+    console.log('a user disconnected');
+  });
+});
+
 const port = process.env.PORT || 8000;
 
-app.listen(port, () => {
+server.listen(port, () => {
   console.log('Listening on port', port);
 });

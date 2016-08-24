@@ -4,7 +4,6 @@ import Grid from 'components/Grid';
 import React from 'react';
 import { withRouter } from 'react-router';
 
-
 const App = React.createClass({
   render() {
     return (

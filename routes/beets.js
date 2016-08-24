@@ -6,7 +6,7 @@ const knex = require('../knex');
 // eslint-disable-next-line new-cap
 const router = express.Router();
 
-router.get('/beets', (_req, res) => {
+router.get('/beets', (_req, res, next) => {
   knex('beets')
     .orderBy('id')
     .then((beets) => {

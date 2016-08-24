@@ -5,6 +5,8 @@ import axios from 'axios';
 
 var Image = require('react-image-component')
 // React.renderComponent(<Image src='./photos/blackbird.jpg')
+var socket = io();
+console.log(socket);
 
 const Studio = React.createClass({
   getInitialState() {
