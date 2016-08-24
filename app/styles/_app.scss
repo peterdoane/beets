@@ -102,7 +102,9 @@ body {
 
 .grid-row-caption {
   flex: 1;
-  color: yellow;
+  color: yellow !important;
+  background-color: transparent;
+  border: none;
 }
 
 .drum-button {

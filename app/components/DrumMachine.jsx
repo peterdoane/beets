@@ -20,6 +20,10 @@ class Drum {
   };
 }
 
+// axios.all([]).then(responses => {
+//
+// });
+
 //
 /*
 see if axios has a method to resolve all the requests ...
@@ -133,6 +137,7 @@ const DrumMachine = React.createClass({
           className="machine-left"
           pattern={0}
           sequence={this.state.sequence[0]}
+          drums={drums}
         />
         <Grid
           activeStep={this.state.activeStep}
@@ -141,6 +146,7 @@ const DrumMachine = React.createClass({
           className="machine-right"
           pattern={1}
           sequence={this.state.sequence[1]}
+          drums={drums}
         />
       </div>
     </div>
