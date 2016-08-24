@@ -35,185 +35,30 @@ return axios.get(f, { responseType: 'arraybuffer'})
 
 });
 */
-
 const drums = [];
-axios.get('/api/samples/bd/bd2510.mp3', { responseType: 'arraybuffer'})
-  .then(function (response) {
+
+const filenames = [
+  '/api/samples/bd/bd2510.mp3',
+  '/api/samples/SD/SD0010.mp3',
+  '/api/samples/LT/LT50.WAV',
+  '/api/samples/MT/MT75.WAV',
+  '/api/samples/HT/HT75.mp3',
+  '/api/samples/RS/RS.WAV',
+  '/api/samples/CP/CP.WAV',
+  '/api/samples/CB/CB.mp3',
+  '/api/samples/CY/CY1000.mp3',
+  '/api/samples/OH/OH25.WAV',
+  '/api/samples/CH/CH.WAV'
+];
+
+for (let i = 0; i < filenames.length; ++i) {
+  axios.get(filenames[i], { responseType: 'arraybuffer' })
+  .then((response) => {
     context.decodeAudioData(response.data, function(buffer) {
-      drums[0] = new Drum(context, buffer);
+      drums[i] = new Drum(context, buffer);
     });
-
-    })
-  .catch(function (error) {
-    console.log(error);
-  });
-
-  axios.get('/api/samples/SD/SD0010.mp3', { responseType: 'arraybuffer'})
-    .then(function (response) {
-      context.decodeAudioData(response.data, function(buffer) {
-        drums[1] = new Drum(context, buffer);
-      });
-
-      })
-    .catch(function (error) {
-      console.log(error);
-    });
-
-  axios.get('/api/samples/LT/LT50.WAV', { responseType: 'arraybuffer'})
-      .then(function (response) {
-        context.decodeAudioData(response.data, function(buffer) {
-          drums[2] = new Drum(context, buffer);
-        });
-
-        })
-      .catch(function (error) {
-        console.log(error);
-      });
-
-  axios.get('/api/samples/MT/MT75.WAV', { responseType: 'arraybuffer'})
-      .then(function (response) {
-        context.decodeAudioData(response.data, function(buffer) {
-          drums[3] = new Drum(context, buffer);
-        });
-
-        })
-      .catch(function (error) {
-        console.log(error);
-      });
-
-  axios.get('/api/samples/HT/HT75.mp3', { responseType: 'arraybuffer'})
-      .then(function (response) {
-        context.decodeAudioData(response.data, function(buffer) {
-          drums[4] = new Drum(context, buffer);
-        });
-
-        })
-      .catch(function (error) {
-        console.log(error);
-      });
-
-  axios.get('/api/samples/RS/RS.WAV', { responseType: 'arraybuffer'})
-      .then(function (response) {
-        context.decodeAudioData(response.data, function(buffer) {
-          drums[5] = new Drum(context, buffer);
-        });
-
-        })
-      .catch(function (error) {
-        console.log(error);
-      });
-
-  axios.get('/api/samples/CP/CP.WAV', { responseType: 'arraybuffer'})
-      .then(function (response) {
-        context.decodeAudioData(response.data, function(buffer) {
-          drums[6] = new Drum(context, buffer);
-        });
-
-        })
-      .catch(function (error) {
-        console.log(error);
-      });
-
-  axios.get('/api/samples/CB/CB.mp3', { responseType: 'arraybuffer'})
-      .then(function (response) {
-        context.decodeAudioData(response.data, function(buffer) {
-          drums[7] = new Drum(context, buffer);
-        });
-
-        })
-      .catch(function (error) {
-        console.log(error);
-      });
-
-  axios.get('/api/samples/CY/CY1000.mp3', { responseType: 'arraybuffer'})
-      .then(function (response) {
-        context.decodeAudioData(response.data, function(buffer) {
-          drums[8] = new Drum(context, buffer);
-        });
-
-        })
-      .catch(function (error) {
-        console.log(error);
-      });
-
-  axios.get('/api/samples/OH/OH25.WAV', { responseType: 'arraybuffer'})
-      .then(function (response) {
-        context.decodeAudioData(response.data, function(buffer) {
-          drums[9] = new Drum(context, buffer);
-        });
-
-        })
-      .catch(function (error) {
-        console.log(error);
-      });
-
-  axios.get('/api/samples/CH/CH.WAV', { responseType: 'arraybuffer'})
-      .then(function (response) {
-        context.decodeAudioData(response.data, function(buffer) {
-          drums[10] = new Drum(context, buffer);
-        });
-
-        })
-      .catch(function (error) {
-        console.log(error);
-      });
-
-//
-// var sampleLoader = function(url, context, callback) {
-//   console.log(url);
-//   var request = new XMLHttpRequest();
-//   request.open('get', url, true);
-//   request.responseType = 'arraybuffer';
-//   request.onload = function() {
-//     context.decodeAudioData(request.response, function(buffer) {
-//       callback(buffer);
-//     }, function(err) { console.log(err);});
-//   };
-//   request.send();
-// };
-// const drums = [];
-// sampleLoader('./bd/bd0000.mp3', context, function(buffer) {
-//   drums[0] = new Drum(context, buffer);
-// });
-// sampleLoader('./SD/SD0000.mp3', context, function(buffer) {
-//   drums[1] = new Drum(context, buffer);
-// });
-// sampleLoader('./LC/LC00.WAV', context, function(buffer) {
-//   drums[2] = new Drum(context, buffer);
-// });
-// sampleLoader('./MC/MC00.WAV', context, function(buffer) {
-//   drums[3] = new Drum(context, buffer);
-// });
-// sampleLoader('./HC/HC00.WAV', context, function(buffer) {
-//   drums[4] = new Drum(context, buffer);
-// });
-// sampleLoader('./RS/RS.WAV', context, function(buffer) {
-//   drums[5] = new Drum(context, buffer);
-// });
-// sampleLoader('./CP/CP.WAV', context, function(buffer) {
-//   drums[6] = new Drum(context, buffer);
-// });
-// sampleLoader('./CB/CB.mp3', context, function(buffer) {
-//   drums[7] = new Drum(context, buffer);
-// });
-// sampleLoader('./CY/CY0000.mp3', context, function(buffer) {
-//   drums[8] = new Drum(context, buffer);
-// });
-// sampleLoader('./OH/OH00.WAV', context, function(buffer) {
-//   drums[9] = new Drum(context, buffer);
-// });
-// sampleLoader('./CH/CH.WAV', context, function(buffer) {
-//   drums[10] = new Drum(context, buffer);
-// });
-// sampleLoader('./CL/CL.WAV', context, function(buffer) {
-//   drums[11] = new Drum(context, buffer);
-// });
-// sampleLoader('./LT/LT00.WAV', context, function(buffer) {
-//   drums[12] = new Drum(context, buffer);
-// });
-
-
-
+  })
+}
 
 const DrumMachine = React.createClass({
   getInitialState() {
