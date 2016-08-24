@@ -21,14 +21,19 @@ const Beets = React.createClass({
   render() {
     const beets = this.state.beets;
 
-    return <div>
-      <h1>Featured Beets</h1>
+    return <div className="component-beets">
+      <h1>Recent Beets</h1>
       <ul>
       {beets.map((beet, index) => {
-        return <li key={index}>
-          <img src={beet.image_url} />
-          {beet.name}
-        </li>
+        return <ul>
+          <li key={index}>
+            <img src={beet.image_url} />
+            {beet.name}
+          </li>
+          <li>
+            <span>{beet.title}</span>
+          </li>
+        </ul>
       })}
       </ul>
     </div>
