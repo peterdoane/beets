@@ -68,20 +68,34 @@ app.use((err, _req, res, _next) => {
 });
 
 // socket.io stuff
+const usernames = {};
 
 io.sockets.on('connection', (socket) => {
   console.log('a user connected');
 
-  socket.on('subscribe', function(data) {
-    console.log('subscribe', data);
-    const { username, chatroom } = data;
+  socket.on('enter studio', function(data) {
+    console.log('enter studio', data);
+    const { username, studio } = data;
+    if (usernames[studio]) {
+      if (usernames[studio].indexOf(username) === -1) {
+        usernames[studio].push(username);
+      }
+    }
+    else {
+      usernames[studio] = [username];
+    }
 
-    socket.join(chatroom);
-    io.sockets.in(chatroom).emit('success', { username, chatroom });
+    socket.join(studio);
+    console.log(usernames[studio]);
+    io.sockets.in(studio).emit('success', { usernames: usernames[studio], studio });
   });
 
   socket.on('chat message', (data) => {
-    io.sockets.in(data.chatroom).emit('post message', data);
+    io.sockets.in(data.studio).emit('post message', data);
+  });
+
+  socket.on('sync', (data) => {
+    io.sockets.in(data.studio).emit('sync', data);
   });
 
   socket.on('disconnect', () => {

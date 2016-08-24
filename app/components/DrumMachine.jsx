@@ -232,6 +232,7 @@ const DrumMachine = React.createClass({
   btnClicked(pattern, row, step) {
     this.state.sequence[pattern][row][step] = !this.state.sequence[pattern][row][step];
     this.setState({ sequence: this.state.sequence });
+    this.props.buttonClick(pattern, row, step);
   },
   handleChangeBpm(event) {
     this.setState({ bpm: event.target.value });
