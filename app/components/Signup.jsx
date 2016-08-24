@@ -37,6 +37,7 @@ const Signup = React.createClass({
       notify.show('Signup successful! You may now log in.', 'success', 10000);
     })
     .catch((err) => {
+      notify.show('Oops! Try again....', 'error', 5000);
       throw err;
     })
   },

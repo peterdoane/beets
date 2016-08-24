@@ -102,11 +102,12 @@ const Studio = React.createClass({
     })
     .then(() => {
       console.log(this.state);
-      notify.show('Your beet is now published!', 'success', 10000);
+      notify.show('Your beet is now published!', 'success', 5000);
       document.getElementById('input-title').value = '';
       document.getElementById('input-image-url').value = '';
     })
     .catch((err) => {
+      notify.show('Oops! Try again....', 'error', 5000);
       throw err;
     })
   },

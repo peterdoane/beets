@@ -9,9 +9,10 @@ const LoggedIn = React.createClass({
     axios.delete('/api/token')
       .then(() => {
         this.props.router.push('/');
-        notify.show('You are now logged out!', 'success', 5000)
+        notify.show('You are now logged out!', 'success', 5000);
       })
       .catch((err) => {
+        notify.show('Oops! Try again....', 'error', 5000);
         throw err;
       });
   },

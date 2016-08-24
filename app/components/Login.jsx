@@ -38,6 +38,7 @@ const Login = React.createClass({
       notify.show('You are now logged in!', 'success', 5000);
     })
     .catch((err) => {
+      notify.show('Oops! Try again....', 'error', 5000);
       throw err;
     })
   },
