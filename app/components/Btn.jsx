@@ -15,23 +15,41 @@ const Btn = React.createClass({
     return this.props.step === this.props.activeStep && this.props.pattern === this.props.activePattern;
   },
   render() {
+    const {
+      step,
+      btnState
+    } = this.props;
     const height = 40;
     const width = 40;
     const active = this.isActive();
+    const buttonClassName = () => {
+      if (step <= 3) {
+        return `drum-button-orange ${btnState ? 'pressed' : ''} ${active ? 'active' : ''}`;
+      } else if (step <= 7) {
+        return `drum-button-yellow ${btnState ? 'pressed' : ''} ${active ? 'active' : ''}`;
+      } else if (step <= 11) {
+        return `drum-button-white ${btnState ? 'pressed' : ''} ${active ? 'active' : ''}`;
+      } else {
+        return `drum-button-red ${btnState ? 'pressed' : ''} ${active ? 'active' : ''}`;
+      }
+    };
     const style = {
-      background: this.props.btnState ? (active ? 'green': 'black') : 'white',
-      border: active ? '1px solid red' : '1px solid black',
-      boxSizing: 'unset',
-      height: '5%',
-      width: '5%',
-      margin:'.125%'
+      // background: this.props.btnState ? (active ? 'green': 'black') : 'white',
+      // border: active ? '1px solid red' : '1px solid black',
+      // boxSizing: 'unset',
+      // height: '5%',
+      // width: '5%',
+      // margin:'.125%'
 
       // left: `${this.props.step * width}px`,
       // top: `${this.props.row * height}px`,
     };
     const fill = this.state.isBtnActive ? '#fff' : '#000';
     return (
-      <div onClick={this.handleClick} style={style} className="drum-button">
+      <div
+        onClick={this.handleClick}
+        style={style}
+        className={buttonClassName()}>
         <svg width="15px" height="26px" viewBox="484 417 15 26">
           <defs>
               <rect id="path-1" x="0" y="0" width="13" height="26"></rect>

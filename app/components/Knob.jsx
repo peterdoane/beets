@@ -2,7 +2,7 @@ import React from 'react';
 
 const Knob = React.createClass({
   render() {
-  return (<div>
+  return (<div className="knob">
 <svg width="111px" height="99px" viewBox="708 818 111 99" >
     <defs>
         <rect id="path-1" x="57.0557483" y="38.1262991" width="3" height="13.7802355" rx="1.5"></rect>

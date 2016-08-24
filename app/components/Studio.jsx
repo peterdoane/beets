@@ -3,6 +3,9 @@ import DrumMachine from 'components/DrumMachine';
 import Knob from 'components/Knob';
 import axios from 'axios';
 
+var Image = require('react-image-component')
+// React.renderComponent(<Image src='./photos/blackbird.jpg')
+
 const Studio = React.createClass({
   getInitialState() {
     return {
@@ -51,10 +54,11 @@ const Studio = React.createClass({
   render() {
     const params = this.props.params;
 
-    return <div>
-      <h1>You Are in {params.id}</h1>
+    return <div className="studio">
+      <h1 className="studio-title">You Are in {params.id}</h1>
       <Knob />
       <div>
+        <Knob />
         <DrumMachine />
       </div>
       <div>

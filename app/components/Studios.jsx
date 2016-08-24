@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 const studios =[{
   id: 1,
   name: 'The Red Room'
-},{
+  },{
   id: 2,
   name: 'Studio 54'
 }];

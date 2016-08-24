@@ -2,15 +2,66 @@
     font-family: 'rolandregular';
     src: url('fonts/rolandregular.woff2') format('woff2'),
          url('fonts/rolandregular.woff') format('woff');
+    font-size: 10px;
+    font-color: red;
     font-weight: lighter;
-    font-style: lighter;
+    font-style: lighter ;
 }
 
+.blackbird-background {
+  background-image: url('blackbird.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  opacity: .75;
+}
 
 body {
   background-color: #fff;
   font-family: 'rolandregular';
+}
 
+.body-title {
+  margin-top: 0;
+  color: blue;
+
+  &-link {
+    color: blue;
+  }
+}
+
+.studio {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.studio-title {
+  color: green;
+  min-width: 100%;
+}
+
+.knob {
+  width: 111px;
+}
+
+.drum-machine {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+
+  @media (min-width: 1200px) {
+    width: auto;
+    max-width: calc(100% - 111px);
+    overflow-x: visible;
+  }
+}
+
+.sequencer-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .button-wrapper {
@@ -30,9 +81,47 @@ body {
   // align-items: stretch;
 }
 
+.grid-row-caption {
+  flex: 1;
+  color: yellow;
+}
+
 .drum-button {
   color:inherit;
-  flex: 1 ;
+  flex: 1;
+  border: 1px solid black;
+  box-sizing: unset;
+  height: 5%;
+  width: 5%;
+  margin: .125%;
+
+  &.active {
+    border: 1px solid red; // TODO: replace with real color
+  }
+
+  &.pressed {
+    background-color: black; // TODO: replace with real color
+  }
+}
+
+.drum-button-orange {
+  @extend .drum-button;
+  background-color: orange;
+}
+
+.drum-button-yellow {
+  @extend .drum-button;
+  background-color: yellow;
+}
+
+.drum-button-white {
+  @extend .drum-button;
+  background-color: white;
+}
+
+.drum-button-red {
+  @extend .drum-button;
+  background-color: red;
 }
 
 .drum-machines {
@@ -41,6 +130,9 @@ body {
     margin: 0 auto;
 }
 
+.group1{
+  background-color: orange;
+}
 .machine-left {
   color:inherit;
   flex:1;
@@ -56,7 +148,8 @@ body {
   // background: cyan;
 }
 
-.button-row > span {
-    color: inherit;
-    flex: 1;
-}
+//  Moved to .grid-row-caption instead, this one is obsolete
+// .button-row > span {
+//     color: inherit;
+//
+// }

@@ -26,9 +26,11 @@ switch (app.get('env')) {
 const path = require('path');
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.use("/api/samples", express.static(path.join(__dirname, 'app/assets')));
+app.use(express.static(path.join(__dirname, 'app/photos')));
+app.use("/api/samples", express.static(path.join(__dirname, 'app/assets'))); // maybe this one would be a good location for the photo
 
-
+// That code is being transpiled by brunch the stuff in the public folder
+// Gotcha, it's not in the repo. I'll add a new route then
 // CRSF protection
 app.use('/api', (req, res, next) => {
   if (/json/.test(req.get('Accept'))) {

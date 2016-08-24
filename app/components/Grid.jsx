@@ -4,10 +4,11 @@ import Btn from 'components/Btn';
 const Grid = React.createClass({
     renderRow(row){
         const btnRow = [];
-        const drumName = ['BD', 'CB', 'CH', 'CL', 'CP', 'CY', 'HC', 'HT', 'JS', 'LC', 'LT'];
-
-        btnRow.push(<span key={drumName[row]}>{drumName[row]}</span>);
+        const drumName = ['BD', 'SD', 'LT', 'MT', 'HT', 'RS', 'CP', 'CB', 'CY', 'OH', 'CH'];
+        btnRow.push(<span key={drumName[row]} className="grid-row-caption">{drumName[row]}</span>);
         for (let step=0; step<16; ++step) {
+
+          // this.props.class = (this.props.btnClicked) ? 'white' : 'black';
 
           btnRow.push(
 

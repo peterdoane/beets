@@ -270,8 +270,8 @@ const DrumMachine = React.createClass({
   },
   render() {
     return (
-    <div>
-      <div>
+    <div className="drum-machine">
+      <div className="sequencer-controls">
         <button onClick={this.handleClickStartStop}>{this.state.isTicking ? 'Stop' : 'Start'}</button>
         <input className="tempo" onChange={this.handleChangeBpm} type='number' value={this.state.bpm}/>
         <select onChange={this.handleChangePattern} value={this.state.activePattern}>
