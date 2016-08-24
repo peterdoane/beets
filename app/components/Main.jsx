@@ -7,7 +7,7 @@ import LoggedIn from 'components/LoggedIn';
 
 const Main = React.createClass({
   render() {
-    return <div>
+    return <div className="component-main">
       <Beets />
       {cookie.load('mc_loggedIn') ? <LoggedIn username={cookie.load('mc_username')} /> : <Login />}
       {cookie.load('mc_loggedIn') ? <Studios /> : null}

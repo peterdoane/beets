@@ -14,6 +14,25 @@
   background-size: cover;
   background-position: center center;
   opacity: .75;
+
+  min-height: 100%;
+  min-width: 1024px;
+
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+  img.bg {
+    left: 50%;
+    margin-left: -512px;   /* 50% */
+  }
 }
 
 body {
@@ -159,16 +178,13 @@ body {
     flex: 1;
 }
 
-.logo {
-  font-family: 'Poiret One', cursive;
-  text-decoration: none;
-  font-size: 4em;
-  font-weight: 900;
-  margin: 20px;
-}
+//////////////////////
+// Home Page Styles //
+//////////////////////
 
-.logo:hover {
-  color: green;
+.component-main {
+  display: flex;
+  align-items: center;
 }
 
 // .component-nav {
@@ -176,12 +192,50 @@ body {
 //   background-size: cover;
 // }
 
+.component-login, .component-logged-in {
+  background-color: #EABE7C;
+  height: 400px;
+  width: 400px;
+  margin: 20px;
+  padding: 20px;
+}
+
 .component-beets {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #EABE7C;
   height: 400px;
   width: 600px;
+  margin: 20px;
+  padding: 20px;
+}
+
+.component-studios {
+  background-color: #EABE7C;
+  width: 100%;
+  margin: 20px;
+  padding: 20px;
+  flex-basis: 200px;
 }
 
 .logo-bar {
+  background-color: #DD6031;
   width: 100%;
+}
+
+.logo {
+  font-family: 'Poiret One', cursive;
+  text-decoration: none;
+  font-size: 4em;
+  font-weight: 900;
+  margin: 20px;
+  padding: 20px;
+  color: #311E10;
+}
+
+.logo:hover {
+  color: #D9DD92;
+}
+
+ul {
+  list-style: none;
+  display: inline-block;
 }
