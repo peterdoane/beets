@@ -117,7 +117,7 @@ const Studio = React.createClass({
       <div>
         <DrumMachine ref={'drumMachine'} buttonClick={this.buttonClick} />
       </div>
-      <div>
+      <div className="publish-form">
         <h2>Publish Beet</h2>
         <div>
           <h3>Collaborators</h3>
