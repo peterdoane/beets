@@ -40,7 +40,7 @@ const Signup = React.createClass({
   },
 
   render() {
-    return <div>
+    return <div className="component-signup">
       <h2>Sign Up Now</h2>
       <div>
         <input

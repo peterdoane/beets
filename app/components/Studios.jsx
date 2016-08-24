@@ -11,7 +11,7 @@ const studios =[{
 
 const Studios = React.createClass({
   render() {
-    return <div>
+    return <div className="component-studios">
     <h1>Enter a Studio</h1>
     <ul>
       {studios.map((element, index) => {
