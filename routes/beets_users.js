@@ -16,7 +16,23 @@ router.get('/beets_users/beet_id/:beetId', (req, res, next) => {
     .catch((err) => {
       next(err);
     });
-})
+});
+
+router.get('/beets_users/username/:username', (req, res, next) => {
+  // select * from beets_users inner join users on (users.id=beets_users.user_id) where username='a';
+  knex('beets_users')
+    .join('users', 'users.id', '=', 'beets_users.user_id')
+    .select('beet_id')
+    .where('username', req.params.username)
+    .then((beets) => {
+      res.send(beets);
+    })
+    .catch((err) => {
+      next(err);
+    });
+});
+
+
 
 router.post('/beets_users', (req, res, next) => {
   // req.body.beet_id
