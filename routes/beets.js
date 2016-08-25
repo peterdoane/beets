@@ -3,6 +3,7 @@
 const { checkAuth } = require('../middleware');
 const express = require('express');
 const knex = require('../knex');
+
 // eslint-disable-next-line new-cap
 const router = express.Router();
 
@@ -18,8 +19,6 @@ router.get('/beets', (_req, res, next) => {
 });
 
 router.post('/beets', checkAuth, (req, res, next) => {
-  console.log(req.body);
-
   knex('beets')
     .insert(req.body, '*')
     .then((beets) => {

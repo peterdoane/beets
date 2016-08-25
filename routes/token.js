@@ -1,14 +1,18 @@
+'use strict';
+
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt-as-promised');
 const knex = require('../knex');
 const boom = require('boom');
 const { camelizeKeys } = require('humps');
 const express = require('express');
+
 // eslint-disable-next-line new-cap
 const router = express.Router();
 
 router.post('/token', (req, res, next) => {
   let user;
+
   knex('users')
     .where('username', req.body.username)
     .first()
@@ -41,7 +45,7 @@ router.post('/token', (req, res, next) => {
       res.cookie('mc_username', user.username, {
         expires: expiry,
         secure: router.get('env') === 'production'
-      })
+      });
 
       res.sendStatus(200);
     })

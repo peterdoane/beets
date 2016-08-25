@@ -1,10 +1,13 @@
 'use strict';
 
 const express = require('express');
+
 // eslint-disable-next-line new-cap
 const router = express.Router();
 const bcrypt = require('bcrypt-as-promised');
 const knex = require('../knex');
+const { decamelizeCase } = require('humps');
+
 // const ev = require('express-validation');
 // const validations = require('../validations/users');
 
@@ -20,7 +23,6 @@ router.get('/users', (req, res, next) => {
 });
 
 router.post('/users', (req, res, next) => {
-  console.log(req.body);
   const username = req.body.username;
   const password = req.body.password;
 
@@ -28,24 +30,22 @@ router.post('/users', (req, res, next) => {
   knex('users').where('username', username)
     .then((users) => {
       if (users.length > 0) {
-        return res.status(400).set('Content-Type', 'text/plain').send('Username already exists');
+        return res.status(400)
+          .set('Content-Type', 'text/plain').send('Username already exists');
       }
-      return bcrypt.hash(req.body.password, 12);
+
+      return bcrypt.hash(password, 12);
     })
-    .then((hashed_password) => {
+    .then((hashedPassword) => {
       return knex('users')
-        .insert({
-          username: req.body.username,
-          hashed_password: hashed_password
-        });
-      })
-    .then((users) => {
+        .insert(decamelizeCase({ username, hashedPassword }));
+    })
+    .then(() => {
       res.sendStatus(200);
     })
     .catch((err) => {
       next(err);
     });
 });
-
 
 module.exports = router;
