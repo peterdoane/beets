@@ -18,10 +18,12 @@ const LoggedIn = React.createClass({
   },
 
   render() {
-    return <div className="component logged-in">
-        <h3>Welcome {this.props.username}</h3>
+    return <div className="card logged-in">
+      <div className="card-content">
+        <span className="card-title">Welcome {this.props.username}!</span>
         <h4>Your Songs</h4>
         <button onClick={this.handleLogOut}>Log Out</button>
+      </div>
     </div>
   }
 });

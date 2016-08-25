@@ -44,8 +44,9 @@ const Login = React.createClass({
   },
 
   render() {
-    return <div className="component login">
-      <h2>Log In!!!</h2>
+    return <div className="card login">
+    <div className="card-content">
+      <span className="card-title">Log In!!!</span>
       <div>
         <input
           onChange={this.handleUsername}
@@ -66,6 +67,7 @@ const Login = React.createClass({
         <button onClick={this.handleLogin}>Log In</button>
       </div>
       <Link to="Signup">Need an account? Sign up here!</Link>
+    </div>
     </div>;
   }
 });

@@ -11,17 +11,21 @@ const studios =[{
 
 const Studios = React.createClass({
   render() {
-    return <div className="component studios">
-    <h1>Enter a Studio</h1>
-    <ul>
-      {studios.map((element, index) => {
-        return <li key={index}>
-          <Link key={index} to={`/Studio/${element.name}`}>
-            {`${element.name}`}
-          </Link>
-        </li>
-      })}
-    </ul>
+    return <div className="card studios">
+      <div className="card-content">
+        <span className="card-title">Enter a Studio</span>
+        <div>
+          <ul>
+            {studios.map((element, index) => {
+              return <li key={index}>
+                <Link key={index} to={`/Studio/${element.name}`}>
+                  {`${element.name}`}
+                </Link>
+              </li>
+            })}
+          </ul>
+        </div>
+      </div>
     </div>;
   }
 });

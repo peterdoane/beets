@@ -13,7 +13,10 @@ const Main = React.createClass({
           <Beets />
         </div>
         <div className="col s4">
-          {cookie.load('mc_loggedIn') ? <LoggedIn username={cookie.load('mc_username')} /> : <Login />}
+          {cookie.load('mc_loggedIn') ?
+            <LoggedIn
+              username={cookie.load('mc_username')} /> :
+            <Login />}
         </div>
       </div>
       <div className="row">
