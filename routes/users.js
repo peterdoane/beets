@@ -6,7 +6,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt-as-promised');
 const knex = require('../knex');
-const { decamelizeCase } = require('humps');
+const { decamelizeKeys } = require('humps');
 
 // const ev = require('express-validation');
 // const validations = require('../validations/users');
@@ -38,7 +38,7 @@ router.post('/users', (req, res, next) => {
     })
     .then((hashedPassword) => {
       return knex('users')
-        .insert(decamelizeCase({ username, hashedPassword }));
+        .insert(decamelizeKeys({ username, hashedPassword }));
     })
     .then(() => {
       res.sendStatus(200);
