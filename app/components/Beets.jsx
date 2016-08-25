@@ -25,33 +25,20 @@ const Beets = React.createClass({
       <div className="card-content">
         <span className="card-title">Recent Beets</span>
           <div className="row">
-              {beets.map((beet, index) => {
-                return <div key={index} className="card small">
-                  <div className="card-image waves-effect waves-block waves-light">
-                    <img className="activator" src={beet.image_url} />
-                  </div>
-                  {/* <div className="card-content">
-                    <span className="card-title">{beet.name}<i className="material-icons right">more_vert</i></span>
-                  </div> */}
-                  <div className="card-reveal">
-                    <span className="card-title">Collaborators on {beet.name}<i className="material-icons right">close</i></span>
-                    <ul>
-                      <li>Collaborator 1</li>
-                      <li>Collaborator 2</li>
-                    </ul>
-                  </div>
-                </div>;
 
-                {/* <ul key={index}>
-                  <li>
+              {beets.map((beet, index) => {
+                return <div key={index} className="card horizontal">
+                  <div className="card-image">
                     <img src={beet.image_url} />
-                    {beet.name}
-                  </li>
-                  <li>
-                    <span>{beet.title}</span>
-                  </li>
-                  // Loop collaborators
-                </ul>; */}
+                  </div>
+                  <div className="card-stacked">
+                    <div className="card-content">
+                      <span className="card-title">{beet.title}</span>
+                      <p>by collab1, collab2</p>
+                    </div>
+                    <a className="waves-effect waves-light btn"><i className="material-icons">play_arrow / pause</i></a>
+                  </div>
+                </div>
               })}
           </div>
       </div>
