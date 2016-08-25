@@ -6,6 +6,8 @@ if (process.env.NODE_ENV !== 'production') {
 
 const express = require('express');
 const app = express();
+
+// eslint-disable-next-line new-cap
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
@@ -29,7 +31,9 @@ const path = require('path');
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'app/photos')));
-app.use("/api/samples", express.static(path.join(__dirname, 'app/assets'))); // maybe this one would be a good location for the photo
+
+// maybe this one would be a good location for the photo
+app.use('/api/samples', express.static(path.join(__dirname, 'app/assets')));
 
 // That code is being transpiled by brunch the stuff in the public folder
 // Gotcha, it's not in the repo. I'll add a new route then
@@ -73,11 +77,9 @@ app.use((err, _req, res, _next) => {
 const usernames = {};
 
 io.sockets.on('connection', (socket) => {
-  console.log('a user connected');
-
-  socket.on('enter studio', function(data) {
-    console.log('enter studio', data);
+  socket.on('enter studio', (data) => {
     const { username, studio } = data;
+
     if (usernames[studio]) {
       if (usernames[studio].indexOf(username) === -1) {
         usernames[studio].push(username);
@@ -88,27 +90,26 @@ io.sockets.on('connection', (socket) => {
     }
 
     socket.join(studio);
-    console.log(usernames[studio]);
-    io.sockets.in(studio).emit('success', { usernames: usernames[studio], studio });
+    io.sockets.in(studio).emit('success',
+      { usernames: usernames[studio], studio });
   });
 
   socket.on('chat message', (data) => {
-    console.log('chat received', data);
     io.sockets.in(data.studio).emit('post message', data);
   });
 
   socket.on('sync', (data) => {
-    console.log('sync', data);
     io.sockets.in(data.studio).emit('sync', data);
   });
 
   socket.on('disconnect', () => {
-    console.log('a user disconnected');
+    // console.log('a user disconnected');
   });
 });
 
 const port = process.env.PORT || 8000;
 
 server.listen(port, () => {
+  // eslint-disable-next-line no-console
   console.log('Listening on port', port);
 });
