@@ -8,16 +8,14 @@ const Nav = React.createClass({
     const imageUrl = '/blackbird.jpg';
 
     return <div className="blackbird-background">
-      {/* <h1 className="body-title">
-        <Link to={'/'} className="body-title-link">Beets</Link>
-      </h1>
-
-    return <div className="component-nav"> */}
-
-        <div className="logo-bar">
-          <Link to={'/'} className="logo">BEETS</Link>
+      <nav>
+        <div className="nav-wrapper">
+          <Link to={'/'} className="brand-logo">BEETS</Link>
         </div>
-      {this.props.children}
+      </nav>
+      <div className="container">
+        {this.props.children}
+      </div>
     </div>;
   }
 });
