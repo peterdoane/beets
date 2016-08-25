@@ -1,26 +1,31 @@
-import axios from 'axios';
-import cookie from 'react-cookie';
+/* global io:false */
+import { notify } from 'react-notify-toast';
 import Chat from 'components/Chat';
 import DrumMachine from 'components/DrumMachine';
 import Knob from 'components/Knob';
 import React from 'react';
-import { notify } from 'react-notify-toast';
+import axios from 'axios';
+import cookie from 'react-cookie';
 
-var Image = require('react-image-component')
-// React.renderComponent(<Image src='./photos/blackbird.jpg')
-var socket = io();
+const socket = io();
 
 const Studio = React.createClass({
   getInitialState() {
+    const sequence = [[], []];
+
+    for (let i = 0; i < 11; ++i) {
+      sequence[0].push([]);
+      sequence[1].push([]);
+    }
+
     return {
       studio: this.props.params.id,
       username: cookie.load('mc_username'),
-      collaborators: [
-      ],
-      image_url: '',
-      sequence: '[[],[],[],[],[],[],[],[],[],[],[],[],[]]',
+      collaborators: [],
+      imageUrl: '',
+      sequence,
       title: ''
-    }
+    };
   },
   componentWillMount() {
     socket.emit('enter studio', {
@@ -28,7 +33,8 @@ const Studio = React.createClass({
       username: this.state.username
     });
     this.setState({
-      collaborators: this.state.collaborators.concat({ username: this.state.username })
+      collaborators:
+        this.state.collaborators.concat({ username: this.state.username })
     });
 
     socket.on('success', (data) => {
@@ -37,38 +43,40 @@ const Studio = React.createClass({
       });
 
       if (this.state.username === data.usernames[0]) {
-        const sequence = this.refs['drumMachine'].state.sequence;
+        const sequence = this.refs.drumMachine.state.sequence;
 
         socket.emit('sync', {
           studio: this.props.params.id,
           username: this.state.username,
-          sequence: sequence
+          sequence
         });
 
         socket.emit('sync', {
           studio: this.props.params.id,
           username: this.state.username,
-          bpm: this.refs['drumMachine'].state.bpm
+          bpm: this.refs.drumMachine.state.bpm
         });
       }
     });
 
     socket.on('sync', (data) => {
-      const drumMachine = this.refs['drumMachine'];
+      const drumMachine = this.refs.drumMachine;
+
       if (data.sequence) {
         if (data.username !== this.state.username) {
           drumMachine.setState({ sequence: data.sequence });
         }
       }
-      else if(data.buttonClick) {
+      else if (data.buttonClick) {
         if (data.username !== this.state.username) {
           const sequence = drumMachine.state.sequence;
           const { pattern, row, step } = data.buttonClick;
+
           sequence[pattern][row][step] = !sequence[pattern][row][step];
-          drumMachine.setState({ sequence: sequence });
+          drumMachine.setState({ sequence });
         }
       }
-      else if(data.bpm) {
+      else if (data.bpm) {
         if (data.username !== this.state.username) {
           drumMachine.setState({ bpm: data.bpm });
         }
@@ -80,7 +88,7 @@ const Studio = React.createClass({
     socket.emit('sync', {
       studio: this.props.params.id,
       username: this.state.username,
-      buttonClick: { pattern: pattern, row: row, step: step }
+      buttonClick: { pattern, row, step }
     });
   },
 
@@ -96,15 +104,15 @@ const Studio = React.createClass({
     const title = event.target.value;
 
     this.setState({
-      title: title
+      title
     });
   },
 
   handleImageUrl(event) {
-    const image_url = event.target.value;
+    const imageUrl = event.target.value;
 
     this.setState({
-      image_url: image_url
+      imageUrl
     });
   },
 
@@ -116,17 +124,18 @@ const Studio = React.createClass({
     event.preventDefault();
     axios.post('/api/beets', {
       title: this.state.title,
-      image_url: this.state.image_url,
+      imageUrl: this.state.imageUrl,
       sequence: this.state.sequence
     })
     .then((newBeet) => {
       const newBeetId = newBeet.data.id;
 
       const promises = this.state.collaborators.map((collaborator) => {
-        return axios.post('/api/beets_users', { beetId: newBeetId, username: collaborator.username });
+        return axios.post('/api/beets_users',
+          { beetId: newBeetId, username: collaborator.username });
       });
 
-      return axios.all(promises)
+      return axios.all(promises);
     })
     .then(() => {
       notify.show('Your beet is now published!', 'success', 5000);
@@ -136,7 +145,7 @@ const Studio = React.createClass({
     .catch((err) => {
       notify.show('Oops! Try again....', 'error', 5000);
       throw err;
-    })
+    });
   },
 
   render() {
@@ -146,7 +155,11 @@ const Studio = React.createClass({
       <h1 className="studio-title">You Are in {params.id}</h1>
       <Knob />
       <div>
-        <DrumMachine ref={'drumMachine'} buttonClick={this.buttonClick} bpmChanged={this.bpmChanged} />
+        <DrumMachine
+          bpmChanged={this.bpmChanged}
+          buttonClick={this.buttonClick}
+          ref="drumMachine"
+        />
       </div>
       <div className="meta-data">
         <div className="component">
@@ -154,33 +167,39 @@ const Studio = React.createClass({
           <div>
             <h3>Collaborators</h3>
             <ul>
-              {this.state.collaborators.map((elem, index) => <li key={index}>{elem.username}</li>)}
+              {this.state.collaborators.map(
+                (elem, index) => <li key={index}>{elem.username}</li>
+              )}
             </ul>
           </div>
           <h3>Add Beet Info</h3>
           <form>
             <div>
               <input
+                id="input-title"
                 onChange={this.handleTitle}
                 placeholder="Title"
                 type="text"
-                id="input-title"
               />
             </div>
             <div>
               <input
+                id="input-image-url"
                 onChange={this.handleImageUrl}
                 placeholder="Album Image URL"
                 type="text"
-                id="input-image-url"
               />
             </div>
             <button onClick={this.handlePublish}>Publish Beet</button>
           </form>
         </div>
-        <Chat socket={socket} studio={this.state.studio} username={this.state.username}/>
+        <Chat
+          socket={socket}
+          studio={this.state.studio}
+          username={this.state.username}
+        />
       </div>
-    </div>
+    </div>;
   }
 });
 
