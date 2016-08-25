@@ -53,7 +53,7 @@ router.get('/beets_users/username/:username', (req, res, next) => {
     // res.send(collaborators)
 
 
-router.post('/beets_users', (req, res, next) => {
+router.post('/beets_users', checkAuth, (req, res, next) => {
   // req.body.beet_id
   // req.body.username
 
