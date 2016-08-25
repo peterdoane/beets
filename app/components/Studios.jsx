@@ -1,10 +1,10 @@
-import React from 'react';
 import { Link } from 'react-router';
+import React from 'react';
 
-const studios =[{
+const studios = [{
   id: 1,
   name: 'The Red Room'
-  },{
+}, {
   id: 2,
   name: 'Studio 54'
 }];
@@ -21,7 +21,7 @@ const Studios = React.createClass({
                 <Link key={index} to={`/Studio/${element.name}`}>
                   {`${element.name}`}
                 </Link>
-              </li>
+              </li>;
             })}
           </ul>
         </div>

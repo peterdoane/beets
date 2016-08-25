@@ -1,7 +1,7 @@
-import Routes from 'components/Routes';
+import Notifications from 'react-notify-toast';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Notifications from 'react-notify-toast';
+import Routes from 'components/Routes';
 
 ReactDOM.render(
   <div>
