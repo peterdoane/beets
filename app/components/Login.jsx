@@ -1,22 +1,21 @@
-import React from 'react';
 import { Link, withRouter } from 'react-router';
-import Signup from 'components/Signup';
+import React from 'react';
 import axios from 'axios';
 import { notify } from 'react-notify-toast';
 
 const Login = React.createClass({
-  getInitialState(){
+  getInitialState() {
     return {
       username: '',
       password: ''
-    }
+    };
   },
 
   handleUsername(event) {
     const username = event.target.value;
 
     this.setState({
-      username: username
+      username
     });
   },
 
@@ -24,50 +23,50 @@ const Login = React.createClass({
     const password = event.target.value;
 
     this.setState({
-      password: password
+      password
     });
   },
 
-  handleLogin(event) {
+  handleLogin() {
     axios.post('/api/token', {
       username: this.state.username,
       password: this.state.password
     })
-    .then((data) => {
+    .then(() => {
       this.props.router.push('/');
       notify.show('You are now logged in!', 'success', 5000);
     })
     .catch((err) => {
       notify.show('Oops! Try again....', 'error', 5000);
       throw err;
-    })
+    });
   },
 
   render() {
     return <div className="card login">
-    <div className="card-content">
-      <span className="card-title">Log In!!!</span>
-      <div>
-        <input
-          onChange={this.handleUsername}
-          placeholder="Username"
-          type="text"
-          value={this.state.username}
-        />
+      <div className="card-content">
+        <span className="card-title">Log In!!!</span>
+        <div>
+          <input
+            onChange={this.handleUsername}
+            placeholder="Username"
+            type="text"
+            value={this.state.username}
+          />
+        </div>
+        <div>
+          <input
+            onChange={this.handlePassword}
+            placeholder="Password"
+            type="password"
+            value={this.state.password}
+          />
+        </div>
+        <div>
+          <button onClick={this.handleLogin}>Log In</button>
+        </div>
+        <Link to="Signup">Need an account? Sign up here!</Link>
       </div>
-      <div>
-        <input
-          onChange={this.handlePassword}
-          placeholder="Password"
-          type="password"
-          value={this.state.password}
-        />
-      </div>
-      <div>
-        <button onClick={this.handleLogin}>Log In</button>
-      </div>
-      <Link to="Signup">Need an account? Sign up here!</Link>
-    </div>
     </div>;
   }
 });

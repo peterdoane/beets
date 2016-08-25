@@ -1,5 +1,5 @@
-import React from 'react';
 import { Link, withRouter } from 'react-router';
+import React from 'react';
 import axios from 'axios';
 import { notify } from 'react-notify-toast';
 
@@ -8,14 +8,14 @@ const Signup = React.createClass({
     return {
       username: '',
       password: ''
-    }
+    };
   },
 
   handleUsername(event) {
     const username = event.target.value;
 
     this.setState({
-      username: username
+      username
     });
   },
 
@@ -23,11 +23,11 @@ const Signup = React.createClass({
     const password = event.target.value;
 
     this.setState({
-      password: password
-    })
+      password
+    });
   },
 
-  handleRegister(event) {
+  handleRegister() {
     axios.post('/api/users', {
       username: this.state.username,
       password: this.state.password
@@ -39,7 +39,7 @@ const Signup = React.createClass({
     .catch((err) => {
       notify.show('Oops! Try again....', 'error', 5000);
       throw err;
-    })
+    });
   },
 
   render() {

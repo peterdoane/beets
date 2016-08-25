@@ -1,8 +1,7 @@
-import { withRouter } from 'react-router';
-import axios from 'axios';
 import React from 'react';
-import Studios from 'components/Studios';
+import axios from 'axios';
 import { notify } from 'react-notify-toast';
+import { withRouter } from 'react-router';
 
 const LoggedIn = React.createClass({
   handleLogOut() {
@@ -24,7 +23,7 @@ const LoggedIn = React.createClass({
         <h4>Your Songs</h4>
         <button onClick={this.handleLogOut}>Log Out</button>
       </div>
-    </div>
+    </div>;
   }
 });
 

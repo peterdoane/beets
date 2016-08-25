@@ -1,12 +1,10 @@
-// import App from 'components/App';
-import React from 'react';
-import Beets from 'components/Beets';
+import { IndexRoute, Route, Router, browserHistory } from 'react-router';
 import DrumMachine from 'components/DrumMachine';
-import { browserHistory, IndexRoute, Route, Router } from 'react-router';
-import Nav from 'components/Nav';
 import Main from 'components/Main';
-import Studio from 'components/Studio';
+import Nav from 'components/Nav';
+import React from 'react';
 import Signup from 'components/Signup';
+import Studio from 'components/Studio';
 
 const Routes = React.createClass({
   render() {
@@ -18,7 +16,7 @@ const Routes = React.createClass({
         <Route component={DrumMachine} path="DrumMachine" />
 
       </Route>
-    </Router>
+    </Router>;
   }
 });
 
