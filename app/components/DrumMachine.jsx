@@ -29,14 +29,12 @@ class Drum {
 see if axios has a method to resolve all the requests ...
 axios parallel api (later optimizations)
 const files = ['f1', 'f2', 'f3'];
-
 q.all(files.map(f => {
 return axios.get(f, { responseType: 'arraybuffer'})
 })).then(allRawData => {
 // another one to returna list of buffers ...
   const drums = allBuffer.map(b => {return new Drum (context, b)})
 }).catch(e => {
-
 });
 */
 const drums = [];
@@ -123,7 +121,11 @@ const DrumMachine = React.createClass({
     return (
     <div className="drum-machine">
       <div className="sequencer-controls">
-        <button className="Start" onClick={this.handleClickStartStop}>{this.state.isTicking ? 'Stop' : 'Start'}</button>
+        <a
+          className="btn-floating btn-large waves-effect waves-light red"
+          onClick={this.handleClickStartStop}>
+          {this.state.isTicking ? '⬛' : '▶︎'}
+        </a>
         <input className="tempo" onChange={this.handleChangeBpm} type='number' value={this.state.bpm}/>
         <select className="drum-pattern" onChange={this.handleChangePattern} value={this.state.activePattern}>
           <option value={0}>0</option>

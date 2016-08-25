@@ -8,6 +8,13 @@
     font-style: lighter ;
 }
 
+.beets-logo {
+  height:118px;
+}
+.nav{
+  height:110px;
+}
+
 .blackbird-background {
   background-image: url('blackbird.jpg');
   background-repeat: no-repeat;
@@ -26,6 +33,11 @@
   // position: fixed;
   top: 0;
   left: 0;
+}
+
+.studio3-background {
+  @extend .blackbird-background;
+  background-image: url('studio3.jpg');
 }
 
 @media screen and (max-width: 1024px) { /* Specific to this particular image */
@@ -51,6 +63,7 @@ body {
 .sequencer-controls {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
@@ -62,9 +75,11 @@ body {
 .tempo{
   margin:.5rem;
   font-size: 1.11rem;
-
+  width: 50px !important;
 }
 .drum-pattern{
+  display: inline-block;
+  width: auto !important;
   margin:.5rem;
   line-height: 1.5rem;
   background: white;
