@@ -29,7 +29,7 @@ const Beets = React.createClass({
               {beets.map((beet, index) => {
                 return <div key={index} className="card horizontal">
                   <div className="card-image">
-                    <img src={beet.image_url} />
+                    <img className="album" src={beet.image_url} />
                   </div>
                   <div className="card-stacked">
                     <div className="card-content">
