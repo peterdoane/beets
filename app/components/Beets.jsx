@@ -25,8 +25,8 @@ const Beets = React.createClass({
       <h1>Recent Beets</h1>
       <ul>
       {beets.map((beet, index) => {
-        return <ul>
-          <li key={index}>
+        return <ul key={index}>
+          <li>
             <img src={beet.image_url} />
             {beet.name}
           </li>
