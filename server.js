@@ -51,10 +51,12 @@ app.use(cookieParser());
 const beets = require('./routes/beets');
 const users = require('./routes/users');
 const token = require('./routes/token');
+const beetsUsers = require('./routes/beets_users');
 
 app.use('/api', beets);
 app.use('/api', users);
 app.use('/api', token);
+app.use('/api', beetsUsers);
 
 app.use((_req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));

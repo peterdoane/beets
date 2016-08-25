@@ -100,8 +100,16 @@ const Studio = React.createClass({
       image_url: this.state.image_url,
       sequence: this.state.sequence
     })
+    .then((newBeet) => {
+      const newBeetId = newBeet.data.id;
+
+      const promises = this.state.collaborators.map((collaborator) => {
+        return axios.post('/api/beets_users', { beet_id: newBeetId, username: collaborator.username });
+      });
+
+      return axios.all(promises)
+    })
     .then(() => {
-      console.log(this.state);
       notify.show('Your beet is now published!', 'success', 5000);
       document.getElementById('input-title').value = '';
       document.getElementById('input-image-url').value = '';
