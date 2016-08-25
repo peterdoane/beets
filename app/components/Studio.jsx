@@ -139,10 +139,13 @@ const Studio = React.createClass({
     })
   },
 
+  // getBackgroundClass(){return blackbird-background} do detection based props on line 147
   render() {
     const params = this.props.params;
+  // write className=`studio ${this.getBackgroundClass()}`
 
-    return <div className="studio">
+    return <div className="studio blackbird-background" >
+    <div className="container">
       <h1 className="studio-title">You Are in {params.id}</h1>
       <Knob />
       <div>
@@ -181,6 +184,7 @@ const Studio = React.createClass({
         <Chat socket={socket} studio={this.state.studio} username={this.state.username}/>
       </div>
     </div>
+  </div>
   }
 });
 

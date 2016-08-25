@@ -64,7 +64,7 @@ const Login = React.createClass({
         />
       </div>
       <div>
-        <button onClick={this.handleLogin}>Log In</button>
+        <button className="waves-effect waves-light btn" onClick={this.handleLogin}>Log In</button>
       </div>
       <Link to="Signup">Need an account? Sign up here!</Link>
     </div>

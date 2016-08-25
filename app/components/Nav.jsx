@@ -7,13 +7,13 @@ const Nav = React.createClass({
 
     const imageUrl = '/blackbird.jpg';
 
-    return <div className="blackbird-background">
-      <nav>
+    return <div>
+      <nav className="nav">
         <div className="nav-wrapper">
-          <Link to={'/'} className="brand-logo">BEETS</Link>
+          <Link to={'/'} className="brand-logo"><img className="beets-logo" src="/Beets-logo.png"></img></Link>
         </div>
       </nav>
-      <div className="container">
+      <div>
         {this.props.children}
       </div>
     </div>;

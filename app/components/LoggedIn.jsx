@@ -22,7 +22,7 @@ const LoggedIn = React.createClass({
       <div className="card-content">
         <span className="card-title">Welcome {this.props.username}!</span>
         <h4>Your Songs</h4>
-        <button onClick={this.handleLogOut}>Log Out</button>
+        <button className="waves-effect waves-light btn" onClick={this.handleLogOut}>Log Out</button>
       </div>
     </div>
   }
