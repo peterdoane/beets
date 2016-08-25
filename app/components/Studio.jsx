@@ -1,11 +1,12 @@
 /* global io:false */
-import { notify } from 'react-notify-toast';
+/* eslint-disable react/no-string-refs */
 import Chat from 'components/Chat';
 import DrumMachine from 'components/DrumMachine';
 import Knob from 'components/Knob';
 import React from 'react';
 import axios from 'axios';
 import cookie from 'react-cookie';
+import { notify } from 'react-notify-toast';
 
 const socket = io();
 
@@ -43,7 +44,8 @@ const Studio = React.createClass({
       });
 
       if (this.state.username === data.usernames[0]) {
-        const sequence = this.refs.drumMachine.state.sequence;
+        const drumMachine = this.refs.drumMachine;
+        const sequence = drumMachine.state.sequence;
 
         socket.emit('sync', {
           studio: this.props.params.id,
@@ -54,7 +56,7 @@ const Studio = React.createClass({
         socket.emit('sync', {
           studio: this.props.params.id,
           username: this.state.username,
-          bpm: this.refs.drumMachine.state.bpm
+          bpm: drumMachine.state.bpm
         });
       }
     });
