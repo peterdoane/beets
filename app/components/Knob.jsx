@@ -1,3 +1,6 @@
+/* eslint-disable */
+// Eslint does not like the SVG in this file 🤐
+
 import React from 'react';
 
 const Knob = React.createClass({
