@@ -123,7 +123,11 @@ const DrumMachine = React.createClass({
     return (
     <div className="drum-machine">
       <div className="sequencer-controls">
-        <button className="Start" onClick={this.handleClickStartStop}>{this.state.isTicking ? 'Stop' : 'Start'}</button>
+        <a
+          className="btn-floating btn-large waves-effect waves-light red"
+          onClick={this.handleClickStartStop}>
+          {this.state.isTicking ? '⬛' : '▶︎'}
+        </a>
         <input className="tempo" onChange={this.handleChangeBpm} type='number' value={this.state.bpm}/>
         <select className="drum-pattern" onChange={this.handleChangePattern} value={this.state.activePattern}>
           <option value={0}>0</option>

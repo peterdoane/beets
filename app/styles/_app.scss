@@ -35,6 +35,11 @@
   left: 0;
 }
 
+.studio3-background {
+  @extend .blackbird-background;
+  background-image: url('studio3.jpg');
+}
+
 @media screen and (max-width: 1024px) { /* Specific to this particular image */
   img.bg {
     left: 50%;
@@ -58,6 +63,7 @@ body {
 .sequencer-controls {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
@@ -69,9 +75,11 @@ body {
 .tempo{
   margin:.5rem;
   font-size: 1.11rem;
-
+  width: 50px !important;
 }
 .drum-pattern{
+  display: inline-block;
+  width: auto !important;
   margin:.5rem;
   line-height: 1.5rem;
   background: white;

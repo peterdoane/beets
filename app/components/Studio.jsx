@@ -139,12 +139,18 @@ const Studio = React.createClass({
     })
   },
 
-  // getBackgroundClass(){return blackbird-background} do detection based props on line 147
+  getBackgroundClass() {
+    if (/Studio 54/i.test(this.props.params.id)) {
+      return 'studio3-background';
+    } else {
+      return 'blackbird-background';
+    }
+  },
+
   render() {
     const params = this.props.params;
-  // write className=`studio ${this.getBackgroundClass()}`
 
-    return <div className="studio blackbird-background" >
+    return <div className={`studio ${this.getBackgroundClass()}`} >
     <div className="container">
       <h1 className="studio-title">You Are in {params.id}</h1>
       <Knob />
