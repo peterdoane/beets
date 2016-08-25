@@ -5,11 +5,12 @@ const Header = React.createClass({
     const style = {
       background: '#F5A623',
       boxSizing: 'border-box',
-      height: '200px',
+      height: '200px'
     };
+
     return (
       <div id="header" style={style}>
-          <h1>Musical Chairs</h1>
+        <h1>Musical Chairs</h1>
       </div>
     );
   }
