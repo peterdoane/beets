@@ -6,8 +6,19 @@ const knex = require('../knex');
 // eslint-disable-next-line new-cap
 const router = express.Router();
 
+router.get('/beets_users/beet_id/:beetId', (req, res, next) => {
+  knex('beets_users')
+    .select('user_id')
+    .where('beet_id', req.params.beetId)
+    .then((result) => {
+      res.send(result);
+    })
+    .catch((err) => {
+      next(err);
+    });
+})
+
 router.post('/beets_users', (req, res, next) => {
-  console.log(req.body);
   // req.body.beet_id
   // req.body.username
 
