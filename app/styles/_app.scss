@@ -15,15 +15,15 @@
   background-position: center center;
   opacity: .75;
 
-  min-height: 100%;
+  // min-height: 100%;
   min-width: 1024px;
 
   /* Set up proportionate scaling */
-  width: 100%;
+  // width: 100%;
   height: auto;
 
   /* Set up positioning */
-  position: fixed;
+  // position: fixed;
   top: 0;
   left: 0;
 }
@@ -48,7 +48,29 @@ body {
     color: blue;
   }
 }
+.sequencer-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.start{
+  font-size: 1.15rem;
+  margin: .5rem;
+  padding:.1rem .25rem;
+}
+.tempo{
+  margin:.5rem;
+  font-size: 1.11rem;
 
+}
+.drum-pattern{
+  margin:.5rem;
+  line-height: 1.5rem;
+  background: white;
+  height: 1.5rem;
+  padding: .4rem .25rem;
+}
 .studio {
   display: flex;
   flex-direction: row;
@@ -76,12 +98,6 @@ body {
   }
 }
 
-.sequencer-controls {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
 
 .button-wrapper {
   color:inherit;
@@ -154,6 +170,10 @@ body {
 .group1{
   background-color: orange;
 }
+.meta-data{
+  margin:0px auto;
+  width: 75%;
+}
 .machine-left {
   color:inherit;
   flex:1;
@@ -199,8 +219,8 @@ body {
   background-color: #EABE7C;
   margin: 20px;
   padding: 20px;
+  float:left;
 }
-
 .beets {
   background-color: #EABE7C;
   height: 400px;

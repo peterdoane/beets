@@ -7,15 +7,35 @@ const knex = require('../knex');
 const router = express.Router();
 
 router.get('/beets_users/beet_id/:beetId', (req, res, next) => {
+
+  // select user ids associated w/beetid from beets
+  // for each user id, select user name & add to response object
+
+  // let ids = result of query from beets table
   knex('beets_users')
     .select('user_id')
     .where('beet_id', req.params.beetId)
     .then((result) => {
-      res.send(result);
+      res.send(result);  // return into ids variable
     })
     .catch((err) => {
       next(err);
     });
+
+    // // let users = result of query from users table using ids from above
+    // knex('beets_users')
+    //   .select('user_id')
+    //   .where('beet_id', req.params.beetId)
+    //   .then((result) => {
+    //     res.send(result);  // return into users variable
+    //   })
+    //   .catch((err) => {
+    //     next(err);
+    //   });
+
+    // //  add user query result to response object
+    // res.send(collaborators)
+
 })
 
 router.post('/beets_users', (req, res, next) => {

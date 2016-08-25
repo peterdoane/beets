@@ -3,6 +3,9 @@ import Header from 'components/Header';
 import Grid from 'components/Grid';
 import React from 'react';
 import { withRouter } from 'react-router';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
 
 const App = React.createClass({
   render() {
