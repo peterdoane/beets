@@ -24,10 +24,25 @@ const Beets = React.createClass({
     return <div className="card beets">
       <div className="card-content">
         <span className="card-title">Recent Beets</span>
-          <div>
-            <ul>
+          <div className="row">
               {beets.map((beet, index) => {
-                return <ul key={index}>
+                return <div key={index} className="card small">
+                  <div className="card-image waves-effect waves-block waves-light">
+                    <img className="activator" src={beet.image_url} />
+                  </div>
+                  {/* <div className="card-content">
+                    <span className="card-title">{beet.name}<i className="material-icons right">more_vert</i></span>
+                  </div> */}
+                  <div className="card-reveal">
+                    <span className="card-title">Collaborators on {beet.name}<i className="material-icons right">close</i></span>
+                    <ul>
+                      <li>Collaborator 1</li>
+                      <li>Collaborator 2</li>
+                    </ul>
+                  </div>
+                </div>;
+
+                {/* <ul key={index}>
                   <li>
                     <img src={beet.image_url} />
                     {beet.name}
@@ -36,9 +51,8 @@ const Beets = React.createClass({
                     <span>{beet.title}</span>
                   </li>
                   // Loop collaborators
-                </ul>;
+                </ul>; */}
               })}
-            </ul>
           </div>
       </div>
     </div>
