@@ -1,17 +1,18 @@
+'use strict';
+
 const jwt = require('jsonwebtoken');
 
 const checkAuth = function(req, res, next) {
-  console.log(req.cookies);
-  jwt.verify(req.cookies.mc_accessToken, process.env.JWT_SECRET, (err, decoded) => {
-    console.log(err, decoded);
-    if (err) {
-      return res.sendStatus(401);
-    }
+  jwt.verify(req.cookies.mc_accessToken, process.env.JWT_SECRET,
+    (err, decoded) => {
+      if (err) {
+        return res.sendStatus(401);
+      }
 
-    req.token = decoded;
-    // You can now access the payload via req.token.userId
-    next();
-  });
-}
+      req.token = decoded; // Access the payload via req.token.userId
+      next();
+    }
+  );
+};
 
 module.exports = { checkAuth };
