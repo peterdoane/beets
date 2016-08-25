@@ -85,6 +85,7 @@ const DrumMachine = React.createClass({
   },
   handleChangeBpm(event) {
     this.setState({ bpm: event.target.value });
+    this.props.bpmChanged(event.target.value);
   },
   handleChangePattern(event) {
     this.setState({ activePattern: +event.target.value });

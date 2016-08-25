@@ -44,6 +44,12 @@ const Studio = React.createClass({
           username: this.state.username,
           sequence: sequence
         });
+
+        socket.emit('sync', {
+          studio: this.props.params.id,
+          username: this.state.username,
+          bpm: this.refs['drumMachine'].state.bpm
+        });
       }
     });
 
@@ -62,6 +68,11 @@ const Studio = React.createClass({
           drumMachine.setState({ sequence: sequence });
         }
       }
+      else if(data.bpm) {
+        if (data.username !== this.state.username) {
+          drumMachine.setState({ bpm: data.bpm });
+        }
+      }
     });
   },
 
@@ -70,6 +81,14 @@ const Studio = React.createClass({
       studio: this.props.params.id,
       username: this.state.username,
       buttonClick: { pattern: pattern, row: row, step: step }
+    });
+  },
+
+  bpmChanged(newBpm) {
+    socket.emit('sync', {
+      studio: this.props.params.id,
+      username: this.state.username,
+      bpm: newBpm
     });
   },
 
@@ -127,7 +146,7 @@ const Studio = React.createClass({
       <h1 className="studio-title">You Are in {params.id}</h1>
       <Knob />
       <div>
-        <DrumMachine ref={'drumMachine'} buttonClick={this.buttonClick} />
+        <DrumMachine ref={'drumMachine'} buttonClick={this.buttonClick} bpmChanged={this.bpmChanged} />
       </div>
       <div className="meta-data">
         <div className="component">
