@@ -129,36 +129,38 @@ const Studio = React.createClass({
       <div>
         <DrumMachine ref={'drumMachine'} buttonClick={this.buttonClick} />
       </div>
-      <div className="component">
-        <h2>Publish Beet</h2>
-        <div>
-          <h3>Collaborators</h3>
-          <ul>
-            {this.state.collaborators.map((elem, index) => <li key={index}>{elem.username}</li>)}
-          </ul>
+      <div className="meta-data">
+        <div className="component">
+          <h2>Publish Beet</h2>
+          <div>
+            <h3>Collaborators</h3>
+            <ul>
+              {this.state.collaborators.map((elem, index) => <li key={index}>{elem.username}</li>)}
+            </ul>
+          </div>
+          <h3>Add Beet Info</h3>
+          <form>
+            <div>
+              <input
+                onChange={this.handleTitle}
+                placeholder="Title"
+                type="text"
+                id="input-title"
+              />
+            </div>
+            <div>
+              <input
+                onChange={this.handleImageUrl}
+                placeholder="Album Image URL"
+                type="text"
+                id="input-image-url"
+              />
+            </div>
+            <button onClick={this.handlePublish}>Publish Beet</button>
+          </form>
         </div>
-        <h3>Add Beet Info</h3>
-        <form>
-          <div>
-            <input
-              onChange={this.handleTitle}
-              placeholder="Title"
-              type="text"
-              id="input-title"
-            />
-          </div>
-          <div>
-            <input
-              onChange={this.handleImageUrl}
-              placeholder="Album Image URL"
-              type="text"
-              id="input-image-url"
-            />
-          </div>
-          <button onClick={this.handlePublish}>Publish Beet</button>
-        </form>
+        <Chat socket={socket} studio={this.state.studio} username={this.state.username}/>
       </div>
-      <Chat socket={socket} studio={this.state.studio} username={this.state.username}/>
     </div>
   }
 });

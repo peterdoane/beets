@@ -33,6 +33,7 @@ const Beets = React.createClass({
           <li>
             <span>{beet.title}</span>
           </li>
+          // Loop collaborators
         </ul>
       })}
       </ul>
