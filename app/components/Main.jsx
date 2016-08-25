@@ -1,9 +1,9 @@
-import React from 'react';
 import Beets from 'components/Beets';
-import Studios from 'components/Studios';
-import Login from 'components/Login';
-import cookie from 'react-cookie';
 import LoggedIn from 'components/LoggedIn';
+import Login from 'components/Login';
+import React from 'react';
+import Studios from 'components/Studios';
+import cookie from 'react-cookie';
 
 const Main = React.createClass({
   render() {
@@ -13,10 +13,9 @@ const Main = React.createClass({
           <Beets />
         </div>
         <div className="col s4">
-          {cookie.load('mc_loggedIn') ?
-            <LoggedIn
-              username={cookie.load('mc_username')} /> :
-            <Login />}
+          {cookie.load('mc_loggedIn')
+            ? <LoggedIn username={cookie.load('mc_username')} />
+            : <Login />}
         </div>
       </div>
       <div className="row">
@@ -24,7 +23,7 @@ const Main = React.createClass({
           {cookie.load('mc_loggedIn') ? <Studios /> : null}
         </div>
       </div>
-    </div>
+    </div>;
   }
 });
 
