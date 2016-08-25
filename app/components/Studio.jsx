@@ -123,7 +123,7 @@ const Studio = React.createClass({
       const newBeetId = newBeet.data.id;
 
       const promises = this.state.collaborators.map((collaborator) => {
-        return axios.post('/api/beets_users', { beet_id: newBeetId, username: collaborator.username });
+        return axios.post('/api/beets_users', { beetId: newBeetId, username: collaborator.username });
       });
 
       return axios.all(promises)
