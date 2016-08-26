@@ -159,7 +159,7 @@ const Studio = React.createClass({
       </div>
       <div className="meta-data">
         <div className="component">
-          <h2>Publish Beet</h2>
+          <h2 className="publish">Publish Beet</h2>
           <div>
             <h3>Collaborators</h3>
             <ul>
@@ -184,7 +184,7 @@ const Studio = React.createClass({
                 id="input-image-url"
               />
             </div>
-            <button onClick={this.handlePublish}>Publish Beet</button>
+            <button onClick={this.handlePublish} id="publish" className="waves-effect waves-light btn">Publish Beet</button>
           </form>
         </div>
         <Chat socket={socket} studio={this.state.studio} username={this.state.username}/>

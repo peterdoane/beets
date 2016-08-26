@@ -7,7 +7,9 @@
 body {
     font: 13px Helvetica, Arial;
 }
-
+div.component{
+  color: white;
+}
 #chat-container {
     border: 3px solid orange;
     width: 40rem;
@@ -15,9 +17,11 @@ body {
     margin: 20px 20px;
     background: white;
     float: right;
+    color: white;
 }
 #message-container {
     height: 10.5rem;
+    color: black;
 }
 #container {
     // position: fixed;

@@ -1,11 +1,5 @@
-@font-face {
-    font-family: 'rolandregular';
-    src: url('fonts/rolandregular.woff2') format('woff2'),
-         url('fonts/rolandregular.woff') format('woff');
-    font-size: 10px;
-    font-color: red;
-    font-weight: lighter;
-    font-style: lighter ;
+body {
+  font-family: 'Montserrat', sans-serif;
 }
 
 .beets-logo {
@@ -13,6 +7,9 @@
 }
 .nav{
   height:110px;
+}
+#publish{
+  width:150;
 }
 
 .blackbird-background {
@@ -49,7 +46,6 @@
 
 body {
   background-color: #fff;
-  font-family: 'rolandregular';
 }
 
 .body-title {
@@ -158,28 +154,29 @@ body {
 
 .drum-button-orange {
   @extend .drum-button;
-  background-color: orange;
+  background-color: #FF6752;
 }
 
 .drum-button-yellow {
   @extend .drum-button;
-  background-color: yellow;
+  background-color: #FFB761;
 }
 
 .drum-button-white {
   @extend .drum-button;
-  background-color: white;
+  background-color: #FCFD19;
 }
 
 .drum-button-red {
   @extend .drum-button;
-  background-color: red;
+  background-color: #FFFFFF;
 }
 
 .drum-machines {
     display: flex;
     width: 1000px;
     margin: 0 auto;
+    background-color:#4f5c8c;
 }
 
 .group1{

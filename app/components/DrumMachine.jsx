@@ -1,6 +1,8 @@
 import Grid from 'components/Grid';
 import React from 'react';
 import axios from 'axios';
+import Toggle from 'material-ui/Toggle';
+
 
 var context = new AudioContext;
 
@@ -127,6 +129,7 @@ const DrumMachine = React.createClass({
           {this.state.isTicking ? '⬛' : '▶︎'}
         </a>
         <input className="tempo" onChange={this.handleChangeBpm} type='number' value={this.state.bpm}/>
+
         <select className="drum-pattern" onChange={this.handleChangePattern} value={this.state.activePattern}>
           <option value={0}>0</option>
           <option value={1}>1</option>
