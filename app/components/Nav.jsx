@@ -1,18 +1,23 @@
-import { Link, withRouter } from 'react-router';
 import React from 'react';
+import { withRouter, Link } from 'react-router';
 
 const Nav = React.createClass({
 
   render() {
+
+    const imageUrl = '/blackbird.jpg';
+
     return <div>
-      <nav>
+      <nav className="nav">
         <div className="nav-wrapper">
-          <Link className="brand-logo" to={'/'}>BEETS</Link>
+          <Link to={'/'} className="brand-logo"><img className="beets-logo" src="Beets-logo.png"></img></Link>
         </div>
       </nav>
-      {this.props.children}
+      <div>
+        {this.props.children}
+      </div>
     </div>;
   }
 });
 
-export default withRouter(Nav);
+export default withRouter(Nav)
