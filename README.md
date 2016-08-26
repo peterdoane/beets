@@ -32,8 +32,7 @@ is a chat feature so that the users in a studio can communicate with each other.
 
 ## What web APIs did it use?
 
-The drum sounds
-are samples played via the Web Audio API.
+The drum samples played via the Web Audio API.
 
 ## What technologies did it use?
 
