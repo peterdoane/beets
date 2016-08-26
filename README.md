@@ -53,8 +53,9 @@ technologies include
 
 ## What was the biggest challenge you had to overcome?
 
+Our biggest challenge was lack of time. Another big issue was using React; our
+two-week introduction to React gave us enough knowledge to implement basic
+functionality, but adding more functionality exposed design problems caused
+by inexperience with the React way of doing things.
 
-## Resources
-
-- [Brunch](http://brunch.io)
-- [React](https://facebook.github.io/react/)
+We also ran into some git issues, and a team member's illness did not help either.
