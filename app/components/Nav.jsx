@@ -4,15 +4,13 @@ import React from 'react';
 const Nav = React.createClass({
 
   render() {
-    return <div className="blackbird-background">
+    return <div>
       <nav>
         <div className="nav-wrapper">
           <Link className="brand-logo" to={'/'}>BEETS</Link>
         </div>
       </nav>
-      <div className="container">
-        {this.props.children}
-      </div>
+      {this.props.children}
     </div>;
   }
 });
