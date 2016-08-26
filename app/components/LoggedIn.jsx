@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios';
+import cookie from 'react-cookie';
 import { notify } from 'react-notify-toast';
 import { withRouter } from 'react-router';
-import cookie from 'react-cookie';
 
 const LoggedIn = React.createClass({
   getInitialState() {
@@ -13,7 +13,7 @@ const LoggedIn = React.createClass({
   },
 
   componentWillMount() {
-    let arr = [];
+    const arr = [];
 
     axios.get(`/api/beets/${this.state.username}`)
     .then((res) => {
@@ -24,7 +24,7 @@ const LoggedIn = React.createClass({
       this.setState({ beets: arr });
     })
     .catch((err) => {
-      console.error(err);
+      throw err;
     });
   },
 
@@ -47,7 +47,7 @@ const LoggedIn = React.createClass({
         <h5>Your Beets</h5>
         <ul>
           {this.state.beets.map((beet, index) => {
-            return <li key={index}>{beet}</li>
+            return <li key={index}>{beet}</li>;
           })}
         </ul>
         <div>
