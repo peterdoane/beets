@@ -36,7 +36,7 @@ The drum samples played via the Web Audio API.
 
 ## What technologies did it use?
 
-The Beets front end is built with React.js with Materialize.css.
+The Beets front end is built with React.js and Materialize.css.
 The Beets back end is an Express.js server running on Node.js.
 Socket.io enables real-time chat and drum pattern editing.
 
