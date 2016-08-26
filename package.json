@@ -12,7 +12,10 @@
     "deploy": "rm -rf public; brunch build --production; surge public",
     "knex": "knex",
     "lint": "eslint --ext .js,.jsx --ignore-pattern public",
-    "start": "brunch watch --server"
+    "nf": "nf start",
+    "start": "brunch watch --server",
+    "heroku-postbuild": "knex migrate:latest",
+    "nodemon": "nodemon server.js"
   },
   "dependencies": {
     "axios": "^0.13.1",
@@ -37,6 +40,9 @@
     "react-tap-event-plugin": "^1.0.0",
     "socket.io": "^1.4.8"
   },
+  "engines": {
+    "node": "6.4.0"
+  },
   "devDependencies": {
     "auto-reload-brunch": "^2.7.1",
     "babel-brunch": "^6.0.5",
@@ -47,6 +53,7 @@
     "dotenv": "^2.0.0",
     "eslint": "^3.2.2",
     "eslint-config-ryansobol": "^8.0.0",
+    "foreman": "^2.0.0",
     "javascript-brunch": "^2.0.0",
     "sass-brunch": "^2.6.3",
     "surge": "^0.18.0",
