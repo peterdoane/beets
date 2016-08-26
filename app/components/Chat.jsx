@@ -5,13 +5,19 @@ const Chat = React.createClass({
     return {
       message: '',
       messages: []
-    }
+    };
   },
   componentWillMount() {
-    // when the server emits the 'chat message' event back here, the user and message are appended to the #messages <ul> in the DOM
+    // when the server emits the 'chat message' event back here, the user
+    // and message are appended to the #messages <ul> in the DOM
+
     this.props.socket.on('post message', (data) => {
       this.setState({
-        messages: this.state.messages.concat(<li key={this.state.messages.length}>{data.username + ': ' + data.message}</li>)
+        messages: this.state.messages.concat(
+          <li key={this.state.messages.length}>
+            {`${data.username}: ${data.message}`}
+          </li>
+        )
       });
     });
   },
@@ -40,12 +46,18 @@ const Chat = React.createClass({
 
         <div id={"container"}>
           <form id={"send"} onSubmit={this.handleSubmitSend}>
-            <input id={"m"} autoComplete={"off"} name={'message'} onChange={this.handleChange} value={this.state.message}/>
+            <input
+              autoComplete={"off"}
+              id={"m"}
+              name={'message'}
+              onChange={this.handleChange}
+              value={this.state.message}
+            />
             <button>Send</button>
           </form>
         </div>
       </div>
-    )
+    );
   }
 });
 
