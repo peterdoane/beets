@@ -48,9 +48,9 @@ technologies include
 
 ## What was the most valuable piece of Customer feedback you received?
 
+The sound labels on the side of the drums were confusing for many beginners to beet-making. We updated the drum machine with sound samples and tooltips to make it more user-friendly.
 
-
-## What was the biggest challenge you had to overcome?
+## What was the biggest technical challenge you had to overcome?
 
 Our biggest challenge was lack of time. Another big issue was using React; our
 two-week introduction to React gave us enough knowledge to implement basic
@@ -58,3 +58,11 @@ functionality, but adding more functionality exposed design problems caused
 by inexperience with the React way of doing things.
 
 We also ran into some git issues, and a team member's illness did not help either.
+
+We tried using SVG files from Sketch to style our app, but abandoned it for time. Aesthetics took a backseat until later in the project, and it became a challenge to style the app with existing architecture already in place.
+
+## What lessons did your team learn as a result of your collaboration?
+
+Incorporating design earlier on in the project is important in laying out the code.
+
+User testing was informative, although we didn't have time to incorporate users' suggestions.
