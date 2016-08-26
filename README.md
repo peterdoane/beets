@@ -1,80 +1,58 @@
-# with-react
+# Beets
 
-Ryan Sobol's React skeleton for Brunch
+A multi-user drum machine for collaborative beat-making.
 
-## Dependencies
+## Team Beets:
 
-Install the [Brunch](http://brunch.io) package globally with NPM.
+- Hien Dang
+- Peter Doane
+- Michael Park
 
-```shell
-npm install -g brunch
-```
+## What's the name of your project?
 
-## Usage
+Our project is called "Beets" after the vegetable, because it sounds like "beats."
 
-Create a new React application based on this Brunch skeleton and install its dependencies.
+## What problem does it solve?
 
-```shell
-brunch new path/to/app --skeleton ryansobol/with-react
-```
+Beets is a web-based drum machine that allows multiple users to edit a drum
+pattern in real time. Beets also provides a platform for publishing drum patterns.
 
-The application's code lives in the `app` directory.
+## Who has this problem?
 
-```shell
-la app
-```
+The typical Beets user is interested in drum patterns and enjoys collaborating
+with like-minded people, but is unable to meet potential collaborators in
+person.
 
-Static files are placed in the `app/assets` directory and are copied to the `public` directory on build.
+## How does your project solve this problem?
 
-```shell
-la app/assets
-```
+Beets allows users to log in from any web browser and listen to beats that other
+users have created. Users can also enter one of several studios to create their
+own beats. Other users may also enter the studio to collaborate with them. There
+is a chat feature so that the users in a studio can communicate with each other.
 
-React components are placed in the `app/components` directory and are combined into the `public/app.js` file on build.
+## What web APIs did it use?
 
-**NOTE:** Each React component lives in a module so can be shared with other modules using [ES6 module](https://hacks.mozilla.org/2015/08/es6-in-depth-modules/) syntax.
+The drum sounds
+are samples played via the Web Audio API.
 
-```shell
-la app/components
-```
+## What technologies did it use?
 
-CSS stylesheets are placed in the `app/styles` directory and are combined into the `public/app.css` file on build.
+The Beets front end is built with React.js with Materialize.css.
+The Beets back end is an Express.js server running on Node.js.
+Socket.io enables real-time chat and drum pattern editing.
 
-```shell
-la app/styles
-```
+The server uses Knex.js to communicate with a PostgreSQL database. Ancillary
+technologies include
+- JSON Web Tokens for user authentication
+- the Axios promise-based HTTP library
+- bcrypt-as-promised, humps, etc.
 
-On each build, the application's files are saved to the `public` directory and served by the HTTP server.
+## What was the most valuable piece of Customer feedback you received?
 
-```shell
-la public
-```
 
-Watch the project for changes and launch an HTTP server.
 
-**NOTE:** Press `Ctrl + C` to quit.
+## What was the biggest challenge you had to overcome?
 
-```shell
-npm start
-```
-
-In a new Terminal tab, navigate back the the project directory.
-
-```shell
-cd path/to/app
-```
-
-Take a look at the `public` directory to see what Brunch created.
-
-```shell
-la public
-```
-
-Open the application in your default browser.
-
-```shell
-open http://localhost:8000/
-```
 
 ## Resources
 
