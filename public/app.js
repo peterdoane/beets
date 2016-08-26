@@ -896,7 +896,7 @@ var Knob = _react2.default.createClass({
             { className: "knob" },
             _react2.default.createElement(
                 "svg",
-                { width: "111px", height: "99px", viewBox: "708 818 111 99" },
+                { width: "0", height: "0", viewBox: "708 818 111 99" },
                 _react2.default.createElement(
                     "defs",
                     null,
