@@ -40,8 +40,8 @@ return axios.get(f, { responseType: 'arraybuffer'})
 const drums = [];
 
 const filenames = [
-  '/api/samples/bd/bd2510.mp3',
   '/api/samples/SD/SD0010.mp3',
+  '/api/samples/bd/bd2510.mp3',
   '/api/samples/LT/LT50.WAV',
   '/api/samples/MT/MT75.WAV',
   '/api/samples/HT/HT75.mp3',
