@@ -9,9 +9,23 @@ const Beets = React.createClass({
   },
 
   componentWillMount() {
+    let beets;
+
     axios.get('/api/beets')
     .then((res) => {
-      this.setState({ beets: res.data });
+      beets = res.data;
+
+      const promises = beets.map((beet, index) => {
+        return axios.get(`/api/beets_users/beet_id/${beet.id}`);
+      });
+      return axios.all(promises);
+    })
+    .then((res) => {
+      for (let i = 0; i < beets.length; i++) {
+        beets[i].collaborators = res[i].data;
+      }
+
+      this.setState({ beets });
     })
     .catch((err) => {
       console.error(err);
@@ -27,18 +41,23 @@ const Beets = React.createClass({
           <div className="row">
 
               {beets.map((beet, index) => {
-                return <div key={index} className="card horizontal">
-                  <div className="card-image">
-                    <img className="album" src={beet.image_url} />
-                  </div>
-                  <div className="card-stacked">
-                    <div className="card-content">
-                      <span className="card-title">{beet.title}</span>
-                      <p>by collab1, collab2</p>
+                return (
+                  <div key={index} className="card horizontal">
+                    <div className="card-image">
+                      <img className="album" src={beet.image_url} />
                     </div>
-                    <a className="waves-effect waves-light btn"><i className="material-icons">play_arrow / pause</i></a>
+                    <div className="card-stacked">
+                      <div className="card-content">
+                        <span className="card-title">{beet.title}</span>
+                        <p>by {beet.collaborators.map((collab) => {
+                          return collab.username;
+                        }).join(', ')} </p>
+
+                      </div>
+                      <a className="waves-effect waves-light btn"><i className="material-icons">play_arrow / pause</i></a>
+                    </div>
                   </div>
-                </div>
+                );
               })}
           </div>
       </div>
