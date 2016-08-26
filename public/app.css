@@ -3,7 +3,7 @@
  * 1. Change the default font family in all browsers (opinionated).
  * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
  */
-/* line 8, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 8, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 html {
   font-family: sans-serif;
   /* 1 */
@@ -15,7 +15,7 @@ html {
 /**
  * Remove the margin in all browsers (opinionated).
  */
-/* line 18, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 18, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 body {
   margin: 0; }
 
@@ -26,7 +26,7 @@ body {
  * 1. Add the correct display in Edge, IE, and Firefox.
  * 2. Add the correct display in IE.
  */
-/* line 31, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 31, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 article,
 aside,
 details,
@@ -45,7 +45,7 @@ summary {
 /**
  * Add the correct display in IE 9-.
  */
-/* line 50, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 50, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 audio,
 canvas,
 progress,
@@ -55,7 +55,7 @@ video {
 /**
  * Add the correct display in iOS 4-7.
  */
-/* line 61, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 61, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 audio:not([controls]) {
   display: none;
   height: 0; }
@@ -63,7 +63,7 @@ audio:not([controls]) {
 /**
  * Add the correct vertical alignment in Chrome, Firefox, and Opera.
  */
-/* line 70, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 70, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 progress {
   vertical-align: baseline; }
 
@@ -71,7 +71,7 @@ progress {
  * Add the correct display in IE 10-.
  * 1. Add the correct display in IE.
  */
-/* line 79, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 79, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 template,
 [hidden] {
   display: none; }
@@ -82,7 +82,7 @@ template,
  * 1. Remove the gray background on active links in IE 10.
  * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
  */
-/* line 92, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 92, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 a {
   background-color: transparent;
   /* 1 */
@@ -93,7 +93,7 @@ a {
  * Remove the outline on focused links when they are also active or hovered
  * in all browsers (opinionated).
  */
-/* line 102, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 102, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 a:active,
 a:hover {
   outline-width: 0; }
@@ -104,7 +104,7 @@ a:hover {
  * 1. Remove the bottom border in Firefox 39-.
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
-/* line 115, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 115, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 abbr[title] {
   border-bottom: none;
   /* 1 */
@@ -116,7 +116,7 @@ abbr[title] {
 /**
  * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
  */
-/* line 125, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 125, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 b,
 strong {
   font-weight: inherit; }
@@ -124,7 +124,7 @@ strong {
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
-/* line 134, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 134, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 b,
 strong {
   font-weight: bolder; }
@@ -132,7 +132,7 @@ strong {
 /**
  * Add the correct font style in Android 4.3-.
  */
-/* line 143, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 143, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 dfn {
   font-style: italic; }
 
@@ -140,7 +140,7 @@ dfn {
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
  */
-/* line 152, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 152, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 h1 {
   font-size: 2em;
   margin: 0.67em 0; }
@@ -148,7 +148,7 @@ h1 {
 /**
  * Add the correct background and color in IE 9-.
  */
-/* line 161, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 161, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 mark {
   background-color: #ff0;
   color: #000; }
@@ -156,7 +156,7 @@ mark {
 /**
  * Add the correct font size in all browsers.
  */
-/* line 170, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 170, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 small {
   font-size: 80%; }
 
@@ -164,7 +164,7 @@ small {
  * Prevent `sub` and `sup` elements from affecting the line height in
  * all browsers.
  */
-/* line 179, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 179, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 sub,
 sup {
   font-size: 75%;
@@ -172,11 +172,11 @@ sup {
   position: relative;
   vertical-align: baseline; }
 
-/* line 187, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 187, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 sub {
   bottom: -0.25em; }
 
-/* line 191, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 191, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 sup {
   top: -0.5em; }
 
@@ -185,14 +185,14 @@ sup {
 /**
  * Remove the border on images inside links in IE 10-.
  */
-/* line 202, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 202, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 img {
   border-style: none; }
 
 /**
  * Hide the overflow in IE.
  */
-/* line 210, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 210, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 svg:not(:root) {
   overflow: hidden; }
 
@@ -202,7 +202,7 @@ svg:not(:root) {
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
  */
-/* line 222, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 222, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 code,
 kbd,
 pre,
@@ -215,7 +215,7 @@ samp {
 /**
  * Add the correct margin in IE 8.
  */
-/* line 234, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 234, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 figure {
   margin: 1em 40px; }
 
@@ -223,7 +223,7 @@ figure {
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
  */
-/* line 243, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 243, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 hr {
   box-sizing: content-box;
   /* 1 */
@@ -238,7 +238,7 @@ hr {
  * 1. Change font properties to `inherit` in all browsers (opinionated).
  * 2. Remove the margin in Firefox and Safari.
  */
-/* line 257, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 257, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 button,
 input,
 select,
@@ -251,7 +251,7 @@ textarea {
 /**
  * Restore the font weight unset by the previous rule.
  */
-/* line 269, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 269, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 optgroup {
   font-weight: bold; }
 
@@ -259,7 +259,7 @@ optgroup {
  * Show the overflow in IE.
  * 1. Show the overflow in Edge.
  */
-/* line 278, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 278, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 button,
 input {
   /* 1 */
@@ -269,7 +269,7 @@ input {
  * Remove the inheritance of text transform in Edge, Firefox, and IE.
  * 1. Remove the inheritance of text transform in Firefox.
  */
-/* line 288, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 288, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 button,
 select {
   /* 1 */
@@ -280,7 +280,7 @@ select {
  *    controls in Android 4.
  * 2. Correct the inability to style clickable types in iOS and Safari.
  */
-/* line 299, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 299, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 button,
 html [type="button"],
 [type="reset"],
@@ -291,7 +291,7 @@ html [type="button"],
 /**
  * Remove the inner border and padding in Firefox.
  */
-/* line 310, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 310, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
@@ -302,7 +302,7 @@ button::-moz-focus-inner,
 /**
  * Restore the focus styles unset by the previous rule.
  */
-/* line 322, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 322, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
@@ -312,7 +312,7 @@ button:-moz-focusring,
 /**
  * Change the border, margin, and padding in all browsers (opinionated).
  */
-/* line 333, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 333, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
@@ -324,7 +324,7 @@ fieldset {
  * 3. Remove the padding so developers are not caught out when they zero out
  *    `fieldset` elements in all browsers.
  */
-/* line 346, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 346, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 legend {
   box-sizing: border-box;
   /* 1 */
@@ -342,7 +342,7 @@ legend {
 /**
  * Remove the default vertical scrollbar in IE.
  */
-/* line 359, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 359, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 textarea {
   overflow: auto; }
 
@@ -350,7 +350,7 @@ textarea {
  * 1. Add the correct box sizing in IE 10-.
  * 2. Remove the padding in IE 10-.
  */
-/* line 368, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 368, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 [type="checkbox"],
 [type="radio"] {
   box-sizing: border-box;
@@ -361,7 +361,7 @@ textarea {
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
-/* line 378, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 378, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
   height: auto; }
@@ -370,7 +370,7 @@ textarea {
  * 1. Correct the odd appearance in Chrome and Safari.
  * 2. Correct the outline style in Safari.
  */
-/* line 388, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 388, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 [type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -380,7 +380,7 @@ textarea {
 /**
  * Remove the inner padding and cancel buttons in Chrome and Safari on OS X.
  */
-/* line 397, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 397, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 [type="search"]::-webkit-search-cancel-button,
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
@@ -388,7 +388,7 @@ textarea {
 /**
  * Correct the text style of placeholders in Chrome, Edge, and Safari.
  */
-/* line 406, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 406, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 ::-webkit-input-placeholder {
   color: inherit;
   opacity: 0.54; }
@@ -397,7 +397,7 @@ textarea {
  * 1. Correct the inability to style clickable types in iOS and Safari.
  * 2. Change font properties to `inherit` in Safari.
  */
-/* line 416, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 416, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
   /* 1 */
@@ -412,15 +412,15 @@ textarea {
   font-weight: lighter;
   font-style: lighter; }
 
-/* line 11, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+/* line 11, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
 .beets-logo {
   height: 118px; }
 
-/* line 14, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+/* line 14, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
 .nav {
   height: 110px; }
 
-/* line 18, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+/* line 18, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
 .blackbird-background, .studio3-background {
   background-image: url("blackbird.jpg");
   background-repeat: no-repeat;
@@ -434,32 +434,32 @@ textarea {
   top: 0;
   left: 0; }
 
-/* line 38, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+/* line 38, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
 .studio3-background {
   background-image: url("studio3.jpg"); }
 
 @media screen and (max-width: 1024px) {
   /* Specific to this particular image */
-  /* line 44, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+  /* line 44, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
   img.bg {
     left: 50%;
     margin-left: -512px;
     /* 50% */ } }
 
-/* line 50, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+/* line 50, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
 body {
   background-color: #fff;
   font-family: 'rolandregular'; }
 
-/* line 55, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+/* line 55, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
 .body-title {
   margin-top: 0;
   color: blue; }
-  /* line 59, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+  /* line 59, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
   .body-title-link {
     color: blue; }
 
-/* line 63, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+/* line 63, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
 .sequencer-controls {
   display: flex;
   flex-direction: row;
@@ -467,19 +467,19 @@ body {
   justify-content: center;
   align-items: center; }
 
-/* line 70, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+/* line 70, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
 .start {
   font-size: 1.15rem;
   margin: .5rem;
   padding: .1rem .25rem; }
 
-/* line 75, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+/* line 75, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
 .tempo {
   margin: .5rem;
   font-size: 1.11rem;
   width: 50px !important; }
 
-/* line 80, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+/* line 80, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
 .drum-pattern {
   display: inline-block;
   width: auto !important;
@@ -489,50 +489,50 @@ body {
   height: 1.5rem;
   padding: .4rem .25rem; }
 
-/* line 89, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+/* line 89, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
 .studio {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap; }
 
-/* line 95, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+/* line 95, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
 .studio-title {
   color: green;
   min-width: 100%; }
 
-/* line 100, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+/* line 100, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
 .knob {
   width: 111px; }
 
-/* line 104, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+/* line 104, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
 .drum-machine {
   width: 100%;
   max-width: 100%;
   overflow-x: auto; }
   @media (min-width: 1200px) {
-    /* line 104, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+    /* line 104, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
     .drum-machine {
       width: auto;
       max-width: calc(100% - 111px);
       overflow-x: visible; } }
 
-/* line 117, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+/* line 117, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
 .button-wrapper {
   color: inherit; }
 
-/* line 125, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+/* line 125, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
 .button-row {
   color: inherit;
   display: flex; }
 
-/* line 134, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+/* line 134, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
 .grid-row-caption {
   flex: 1;
   color: yellow !important;
   background-color: transparent;
   border: none; }
 
-/* line 141, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+/* line 141, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
 .drum-button, .drum-button-orange, .drum-button-yellow, .drum-button-white, .drum-button-red {
   color: inherit;
   flex: 1;
@@ -541,71 +541,71 @@ body {
   height: 5%;
   width: 5%;
   margin: .125%; }
-  /* line 150, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+  /* line 150, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
   .drum-button.active, .active.drum-button-orange, .active.drum-button-yellow, .active.drum-button-white, .active.drum-button-red {
     border: 1px solid red; }
-  /* line 154, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+  /* line 154, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
   .drum-button.pressed, .pressed.drum-button-orange, .pressed.drum-button-yellow, .pressed.drum-button-white, .pressed.drum-button-red {
     background-color: black; }
 
-/* line 159, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+/* line 159, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
 .drum-button-orange {
   background-color: orange; }
 
-/* line 164, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+/* line 164, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
 .drum-button-yellow {
   background-color: yellow; }
 
-/* line 169, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+/* line 169, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
 .drum-button-white {
   background-color: white; }
 
-/* line 174, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+/* line 174, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
 .drum-button-red {
   background-color: red; }
 
-/* line 179, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+/* line 179, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
 .drum-machines {
   display: flex;
   width: 1000px;
   margin: 0 auto; }
 
-/* line 185, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+/* line 185, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
 .group1 {
   background-color: orange; }
 
-/* line 188, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+/* line 188, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
 .meta-data {
   margin: 0px auto;
   width: 75%; }
 
-/* line 192, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+/* line 192, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
 .machine-left {
   color: inherit;
   flex: 1;
   margin-right: 15px; }
 
-/* line 200, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+/* line 200, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
 .machine-right {
   color: inherit;
   flex: 1; }
 
-/* line 213, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+/* line 213, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
 .button-row > span {
   color: inherit;
   flex: 1; }
 
-/* line 222, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+/* line 222, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
 .component {
   background-color: #EABE7C;
   padding: 20px; }
 
-/* line 227, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+/* line 227, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
 .card-image {
   height: 150px;
   width: 150px; }
 
-/* line 232, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+/* line 232, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
 .album {
   zoom: 2;
   display: block;
@@ -615,15 +615,15 @@ body {
   width: auto;
   max-width: 100%; }
 
-/* line 242, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+/* line 242, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
 .card.small {
   height: 100px; }
 
-/* line 246, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+/* line 246, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
 .studios {
   width: 100%; }
 
-/* line 250, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_app.scss */
+/* line 250, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_app.scss */
 ul {
   list-style: none;
   display: inline-block; }
@@ -633,7 +633,7 @@ ul {
  * 1. Change the default font family in all browsers (opinionated).
  * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
  */
-/* line 8, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 8, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 html {
   font-family: sans-serif;
   /* 1 */
@@ -645,7 +645,7 @@ html {
 /**
  * Remove the margin in all browsers (opinionated).
  */
-/* line 18, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 18, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 body {
   margin: 0; }
 
@@ -656,7 +656,7 @@ body {
  * 1. Add the correct display in Edge, IE, and Firefox.
  * 2. Add the correct display in IE.
  */
-/* line 31, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 31, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 article,
 aside,
 details,
@@ -675,7 +675,7 @@ summary {
 /**
  * Add the correct display in IE 9-.
  */
-/* line 50, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 50, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 audio,
 canvas,
 progress,
@@ -685,7 +685,7 @@ video {
 /**
  * Add the correct display in iOS 4-7.
  */
-/* line 61, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 61, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 audio:not([controls]) {
   display: none;
   height: 0; }
@@ -693,7 +693,7 @@ audio:not([controls]) {
 /**
  * Add the correct vertical alignment in Chrome, Firefox, and Opera.
  */
-/* line 70, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 70, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 progress {
   vertical-align: baseline; }
 
@@ -701,7 +701,7 @@ progress {
  * Add the correct display in IE 10-.
  * 1. Add the correct display in IE.
  */
-/* line 79, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 79, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 template,
 [hidden] {
   display: none; }
@@ -712,7 +712,7 @@ template,
  * 1. Remove the gray background on active links in IE 10.
  * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
  */
-/* line 92, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 92, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 a {
   background-color: transparent;
   /* 1 */
@@ -723,7 +723,7 @@ a {
  * Remove the outline on focused links when they are also active or hovered
  * in all browsers (opinionated).
  */
-/* line 102, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 102, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 a:active,
 a:hover {
   outline-width: 0; }
@@ -734,7 +734,7 @@ a:hover {
  * 1. Remove the bottom border in Firefox 39-.
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
-/* line 115, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 115, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 abbr[title] {
   border-bottom: none;
   /* 1 */
@@ -746,7 +746,7 @@ abbr[title] {
 /**
  * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
  */
-/* line 125, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 125, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 b,
 strong {
   font-weight: inherit; }
@@ -754,7 +754,7 @@ strong {
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
-/* line 134, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 134, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 b,
 strong {
   font-weight: bolder; }
@@ -762,7 +762,7 @@ strong {
 /**
  * Add the correct font style in Android 4.3-.
  */
-/* line 143, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 143, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 dfn {
   font-style: italic; }
 
@@ -770,7 +770,7 @@ dfn {
  * Correct the font size and margin on `h1` elements within `section` and
  * `article` contexts in Chrome, Firefox, and Safari.
  */
-/* line 152, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 152, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 h1 {
   font-size: 2em;
   margin: 0.67em 0; }
@@ -778,7 +778,7 @@ h1 {
 /**
  * Add the correct background and color in IE 9-.
  */
-/* line 161, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 161, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 mark {
   background-color: #ff0;
   color: #000; }
@@ -786,7 +786,7 @@ mark {
 /**
  * Add the correct font size in all browsers.
  */
-/* line 170, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 170, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 small {
   font-size: 80%; }
 
@@ -794,7 +794,7 @@ small {
  * Prevent `sub` and `sup` elements from affecting the line height in
  * all browsers.
  */
-/* line 179, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 179, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 sub,
 sup {
   font-size: 75%;
@@ -802,11 +802,11 @@ sup {
   position: relative;
   vertical-align: baseline; }
 
-/* line 187, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 187, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 sub {
   bottom: -0.25em; }
 
-/* line 191, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 191, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 sup {
   top: -0.5em; }
 
@@ -815,14 +815,14 @@ sup {
 /**
  * Remove the border on images inside links in IE 10-.
  */
-/* line 202, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 202, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 img {
   border-style: none; }
 
 /**
  * Hide the overflow in IE.
  */
-/* line 210, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 210, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 svg:not(:root) {
   overflow: hidden; }
 
@@ -832,7 +832,7 @@ svg:not(:root) {
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
  */
-/* line 222, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 222, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 code,
 kbd,
 pre,
@@ -845,7 +845,7 @@ samp {
 /**
  * Add the correct margin in IE 8.
  */
-/* line 234, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 234, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 figure {
   margin: 1em 40px; }
 
@@ -853,7 +853,7 @@ figure {
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
  */
-/* line 243, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 243, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 hr {
   box-sizing: content-box;
   /* 1 */
@@ -868,7 +868,7 @@ hr {
  * 1. Change font properties to `inherit` in all browsers (opinionated).
  * 2. Remove the margin in Firefox and Safari.
  */
-/* line 257, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 257, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 button,
 input,
 select,
@@ -881,7 +881,7 @@ textarea {
 /**
  * Restore the font weight unset by the previous rule.
  */
-/* line 269, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 269, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 optgroup {
   font-weight: bold; }
 
@@ -889,7 +889,7 @@ optgroup {
  * Show the overflow in IE.
  * 1. Show the overflow in Edge.
  */
-/* line 278, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 278, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 button,
 input {
   /* 1 */
@@ -899,7 +899,7 @@ input {
  * Remove the inheritance of text transform in Edge, Firefox, and IE.
  * 1. Remove the inheritance of text transform in Firefox.
  */
-/* line 288, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 288, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 button,
 select {
   /* 1 */
@@ -910,7 +910,7 @@ select {
  *    controls in Android 4.
  * 2. Correct the inability to style clickable types in iOS and Safari.
  */
-/* line 299, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 299, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 button,
 html [type="button"],
 [type="reset"],
@@ -921,7 +921,7 @@ html [type="button"],
 /**
  * Remove the inner border and padding in Firefox.
  */
-/* line 310, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 310, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
@@ -932,7 +932,7 @@ button::-moz-focus-inner,
 /**
  * Restore the focus styles unset by the previous rule.
  */
-/* line 322, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 322, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
@@ -942,7 +942,7 @@ button:-moz-focusring,
 /**
  * Change the border, margin, and padding in all browsers (opinionated).
  */
-/* line 333, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 333, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
@@ -954,7 +954,7 @@ fieldset {
  * 3. Remove the padding so developers are not caught out when they zero out
  *    `fieldset` elements in all browsers.
  */
-/* line 346, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 346, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 legend {
   box-sizing: border-box;
   /* 1 */
@@ -972,7 +972,7 @@ legend {
 /**
  * Remove the default vertical scrollbar in IE.
  */
-/* line 359, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 359, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 textarea {
   overflow: auto; }
 
@@ -980,7 +980,7 @@ textarea {
  * 1. Add the correct box sizing in IE 10-.
  * 2. Remove the padding in IE 10-.
  */
-/* line 368, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 368, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 [type="checkbox"],
 [type="radio"] {
   box-sizing: border-box;
@@ -991,7 +991,7 @@ textarea {
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
-/* line 378, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 378, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
   height: auto; }
@@ -1000,7 +1000,7 @@ textarea {
  * 1. Correct the odd appearance in Chrome and Safari.
  * 2. Correct the outline style in Safari.
  */
-/* line 388, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 388, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 [type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -1010,7 +1010,7 @@ textarea {
 /**
  * Remove the inner padding and cancel buttons in Chrome and Safari on OS X.
  */
-/* line 397, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 397, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 [type="search"]::-webkit-search-cancel-button,
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
@@ -1018,7 +1018,7 @@ textarea {
 /**
  * Correct the text style of placeholders in Chrome, Edge, and Safari.
  */
-/* line 406, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 406, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 ::-webkit-input-placeholder {
   color: inherit;
   opacity: 0.54; }
@@ -1027,24 +1027,24 @@ textarea {
  * 1. Correct the inability to style clickable types in iOS and Safari.
  * 2. Change font properties to `inherit` in Safari.
  */
-/* line 416, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_normalize.scss */
+/* line 416, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_normalize.scss */
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
   /* 1 */
   font: inherit;
   /* 2 */ }
 
-/* line 2, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_chat.scss */
+/* line 2, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_chat.scss */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box; }
 
-/* line 7, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_chat.scss */
+/* line 7, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_chat.scss */
 body {
   font: 13px Helvetica, Arial; }
 
-/* line 11, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_chat.scss */
+/* line 11, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_chat.scss */
 #chat-container {
   border: 3px solid orange;
   width: 40rem;
@@ -1053,51 +1053,51 @@ body {
   background: white;
   float: right; }
 
-/* line 19, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_chat.scss */
+/* line 19, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_chat.scss */
 #message-container {
   height: 10.5rem; }
 
-/* line 22, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_chat.scss */
+/* line 22, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_chat.scss */
 #container {
   width: 100%;
   height: 2rem; }
 
-/* line 28, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_chat.scss */
+/* line 28, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_chat.scss */
 form {
   background: #000;
   padding: 3px;
   bottom: 0;
   width: 100%; }
 
-/* line 34, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_chat.scss */
+/* line 34, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_chat.scss */
 form input {
   border: 0;
   padding: 10px;
   width: 90%;
   margin-right: 0.5%; }
 
-/* line 40, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_chat.scss */
+/* line 40, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_chat.scss */
 form button {
   width: 9%;
   background: #EABE7C;
   border: none;
   padding: 10px; }
 
-/* line 47, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_chat.scss */
+/* line 47, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_chat.scss */
 #messages {
   list-style-type: none;
   margin: 0;
   padding: 0; }
 
-/* line 52, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_chat.scss */
+/* line 52, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_chat.scss */
 #messages li {
   padding: 5px 10px; }
 
-/* line 55, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_chat.scss */
+/* line 55, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_chat.scss */
 #messages li:nth-child(odd) {
   background: #eee; }
 
-/* line 58, /Users/hien/Galvanize/week17/drum-machine-experiment-1/app/styles/_chat.scss */
+/* line 58, /Users/michaelpark/Projects/galvanize/q3/drummachines/drum-machine-experiment-1/app/styles/_chat.scss */
 .hide {
   display: none; }
 

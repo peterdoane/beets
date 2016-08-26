@@ -3628,6 +3628,17 @@ function blitBuffer (src, dst, offset, length) {
   })();
 });
 
+require.register("buffer/node_modules/isarray/index.js", function(exports, require, module) {
+  require = __makeRelativeRequire(require, {}, "buffer/node_modules/isarray");
+  (function() {
+    var toString = {}.toString;
+
+module.exports = Array.isArray || function (arr) {
+  return toString.call(arr) == '[object Array]';
+};
+  })();
+});
+
 require.register("deep-equal/index.js", function(exports, require, module) {
   require = __makeRelativeRequire(require, {}, "deep-equal");
   (function() {
@@ -8433,17 +8444,6 @@ module.exports = invariant;
   })();
 });
 
-require.register("isarray/index.js", function(exports, require, module) {
-  require = __makeRelativeRequire(require, {}, "isarray");
-  (function() {
-    var toString = {}.toString;
-
-module.exports = Array.isArray || function (arr) {
-  return toString.call(arr) == '[object Array]';
-};
-  })();
-});
-
 require.register("lodash/_DataView.js", function(exports, require, module) {
   require = __makeRelativeRequire(require, {}, "lodash");
   (function() {
@@ -13218,83 +13218,39 @@ require.register("object-assign/index.js", function(exports, require, module) {
   require = __makeRelativeRequire(require, {}, "object-assign");
   (function() {
     'use strict';
-/* eslint-disable no-unused-vars */
-var hasOwnProperty = Object.prototype.hasOwnProperty;
 var propIsEnumerable = Object.prototype.propertyIsEnumerable;
 
-function toObject(val) {
-	if (val === null || val === undefined) {
+function ToObject(val) {
+	if (val == null) {
 		throw new TypeError('Object.assign cannot be called with null or undefined');
 	}
 
 	return Object(val);
 }
 
-function shouldUseNative() {
-	try {
-		if (!Object.assign) {
-			return false;
-		}
+function ownEnumerableKeys(obj) {
+	var keys = Object.getOwnPropertyNames(obj);
 
-		// Detect buggy property enumeration order in older V8 versions.
-
-		// https://bugs.chromium.org/p/v8/issues/detail?id=4118
-		var test1 = new String('abc');  // eslint-disable-line
-		test1[5] = 'de';
-		if (Object.getOwnPropertyNames(test1)[0] === '5') {
-			return false;
-		}
-
-		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
-		var test2 = {};
-		for (var i = 0; i < 10; i++) {
-			test2['_' + String.fromCharCode(i)] = i;
-		}
-		var order2 = Object.getOwnPropertyNames(test2).map(function (n) {
-			return test2[n];
-		});
-		if (order2.join('') !== '0123456789') {
-			return false;
-		}
-
-		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
-		var test3 = {};
-		'abcdefghijklmnopqrst'.split('').forEach(function (letter) {
-			test3[letter] = letter;
-		});
-		if (Object.keys(Object.assign({}, test3)).join('') !==
-				'abcdefghijklmnopqrst') {
-			return false;
-		}
-
-		return true;
-	} catch (e) {
-		// We don't expect any of the above to throw, but better to be safe.
-		return false;
+	if (Object.getOwnPropertySymbols) {
+		keys = keys.concat(Object.getOwnPropertySymbols(obj));
 	}
+
+	return keys.filter(function (key) {
+		return propIsEnumerable.call(obj, key);
+	});
 }
 
-module.exports = shouldUseNative() ? Object.assign : function (target, source) {
+module.exports = Object.assign || function (target, source) {
 	var from;
-	var to = toObject(target);
-	var symbols;
+	var keys;
+	var to = ToObject(target);
 
 	for (var s = 1; s < arguments.length; s++) {
-		from = Object(arguments[s]);
+		from = arguments[s];
+		keys = ownEnumerableKeys(Object(from));
 
-		for (var key in from) {
-			if (hasOwnProperty.call(from, key)) {
-				to[key] = from[key];
-			}
-		}
-
-		if (Object.getOwnPropertySymbols) {
-			symbols = Object.getOwnPropertySymbols(from);
-			for (var i = 0; i < symbols.length; i++) {
-				if (propIsEnumerable.call(from, symbols[i])) {
-					to[symbols[i]] = from[symbols[i]];
-				}
-			}
+		for (var i = 0; i < keys.length; i++) {
+			to[keys[i]] = from[keys[i]];
 		}
 	}
 
@@ -35802,51 +35758,6 @@ if ('development' !== 'production') {
 }
 
 module.exports = warning;
-  })();
-});
-
-require.register("react-notify-toast/node_modules/object-assign/index.js", function(exports, require, module) {
-  require = __makeRelativeRequire(require, {}, "react-notify-toast/node_modules/object-assign");
-  (function() {
-    'use strict';
-var propIsEnumerable = Object.prototype.propertyIsEnumerable;
-
-function ToObject(val) {
-	if (val == null) {
-		throw new TypeError('Object.assign cannot be called with null or undefined');
-	}
-
-	return Object(val);
-}
-
-function ownEnumerableKeys(obj) {
-	var keys = Object.getOwnPropertyNames(obj);
-
-	if (Object.getOwnPropertySymbols) {
-		keys = keys.concat(Object.getOwnPropertySymbols(obj));
-	}
-
-	return keys.filter(function (key) {
-		return propIsEnumerable.call(obj, key);
-	});
-}
-
-module.exports = Object.assign || function (target, source) {
-	var from;
-	var keys;
-	var to = ToObject(target);
-
-	for (var s = 1; s < arguments.length; s++) {
-		from = arguments[s];
-		keys = ownEnumerableKeys(Object(from));
-
-		for (var i = 0; i < keys.length; i++) {
-			to[keys[i]] = from[keys[i]];
-		}
-	}
-
-	return to;
-};
   })();
 });
 
@@ -77777,6 +77688,95 @@ module.exports = validateDOMNesting;
   })();
 });
 
+require.register("react/node_modules/object-assign/index.js", function(exports, require, module) {
+  require = __makeRelativeRequire(require, {}, "react/node_modules/object-assign");
+  (function() {
+    'use strict';
+/* eslint-disable no-unused-vars */
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+var propIsEnumerable = Object.prototype.propertyIsEnumerable;
+
+function toObject(val) {
+	if (val === null || val === undefined) {
+		throw new TypeError('Object.assign cannot be called with null or undefined');
+	}
+
+	return Object(val);
+}
+
+function shouldUseNative() {
+	try {
+		if (!Object.assign) {
+			return false;
+		}
+
+		// Detect buggy property enumeration order in older V8 versions.
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=4118
+		var test1 = new String('abc');  // eslint-disable-line
+		test1[5] = 'de';
+		if (Object.getOwnPropertyNames(test1)[0] === '5') {
+			return false;
+		}
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+		var test2 = {};
+		for (var i = 0; i < 10; i++) {
+			test2['_' + String.fromCharCode(i)] = i;
+		}
+		var order2 = Object.getOwnPropertyNames(test2).map(function (n) {
+			return test2[n];
+		});
+		if (order2.join('') !== '0123456789') {
+			return false;
+		}
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+		var test3 = {};
+		'abcdefghijklmnopqrst'.split('').forEach(function (letter) {
+			test3[letter] = letter;
+		});
+		if (Object.keys(Object.assign({}, test3)).join('') !==
+				'abcdefghijklmnopqrst') {
+			return false;
+		}
+
+		return true;
+	} catch (e) {
+		// We don't expect any of the above to throw, but better to be safe.
+		return false;
+	}
+}
+
+module.exports = shouldUseNative() ? Object.assign : function (target, source) {
+	var from;
+	var to = toObject(target);
+	var symbols;
+
+	for (var s = 1; s < arguments.length; s++) {
+		from = Object(arguments[s]);
+
+		for (var key in from) {
+			if (hasOwnProperty.call(from, key)) {
+				to[key] = from[key];
+			}
+		}
+
+		if (Object.getOwnPropertySymbols) {
+			symbols = Object.getOwnPropertySymbols(from);
+			for (var i = 0; i < symbols.length; i++) {
+				if (propIsEnumerable.call(from, symbols[i])) {
+					to[symbols[i]] = from[symbols[i]];
+				}
+			}
+		}
+	}
+
+	return to;
+};
+  })();
+});
+
 require.register("react/react.js", function(exports, require, module) {
   require = __makeRelativeRequire(require, {"transform":["loose-envify"]}, "react");
   (function() {
@@ -77989,7 +77989,7 @@ require.alias("warning/browser.js", "warning");process = require('process');requ
       });
     }
   };
-  var port = ar.port || 9485;
+  var port = ar.port || 9486;
   var host = br.server || window.location.hostname || 'localhost';
 
   var connect = function connect() {
