@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 'use strict';
 
 exports.seed = function(knex) {
@@ -8,7 +9,7 @@ exports.seed = function(knex) {
         title: 'Hip Hop Flop',
         image_url: 'http://placekitten.com/100/100',
         sequence: '[[],[],[],[],[],[],[],[],[],[],[],[],[]]'
-      },{
+      }, {
         id: 2,
         title: 'Eyes Like Pie',
         image_url: 'http://placekitten.com/200/200',
