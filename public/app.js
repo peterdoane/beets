@@ -241,8 +241,21 @@ var Beets = _react2.default.createClass({
   componentWillMount: function componentWillMount() {
     var _this = this;
 
+    var beets = void 0;
+
     _axios2.default.get('/api/beets').then(function (res) {
-      _this.setState({ beets: res.data });
+      beets = res.data;
+
+      var promises = beets.map(function (beet, index) {
+        return _axios2.default.get('/api/beets_users/beet_id/' + beet.id);
+      });
+      return _axios2.default.all(promises);
+    }).then(function (res) {
+      for (var i = 0; i < beets.length; i++) {
+        beets[i].collaborators = res[i].data;
+      }
+
+      _this.setState({ beets: beets });
     }).catch(function (err) {
       console.error(err);
     });
@@ -287,7 +300,11 @@ var Beets = _react2.default.createClass({
                   _react2.default.createElement(
                     'p',
                     null,
-                    'by collab1, collab2'
+                    'by ',
+                    beet.collaborators.map(function (collab) {
+                      return collab.username;
+                    }).join(', '),
+                    ' '
                   )
                 ),
                 _react2.default.createElement(
