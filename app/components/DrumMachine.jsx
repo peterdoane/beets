@@ -62,6 +62,8 @@ for (let i = 0; i < filenames.length; ++i) {
   });
 }
 
+// To do: signal that all samples have been loaded.
+
 const DrumMachine = React.createClass({
   getInitialState() {
     return {
@@ -77,7 +79,7 @@ const DrumMachine = React.createClass({
     };
   },
   btnClicked(pattern, row, step) {
-    const nextSequence = this.state.sequence.slice(); // copy
+    const nextSequence = this.state.sequence.slice();
 
     nextSequence[pattern][row][step] =
       !nextSequence[pattern][row][step];
@@ -136,6 +138,7 @@ const DrumMachine = React.createClass({
             type="number"
             value={this.state.bpm}
           />
+
           <select
             className="drum-pattern"
             onChange={this.handleChangePattern}

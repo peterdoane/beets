@@ -31,8 +31,7 @@ const Studio = React.createClass({
     });
     this.setState({
       collaborators: this.state.collaborators.concat(
-        { username: this.state.username }
-      )
+        { username: this.state.username })
     });
 
     socket.on('success', (data) => {
@@ -166,12 +165,12 @@ const Studio = React.createClass({
             <DrumMachine
               bpmChanged={this.bpmChanged}
               buttonClick={this.buttonClick}
-              ref={'drumMachine'}
+              ref="drumMachine"
             />
           </div>
           <div className="meta-data">
             <div className="component">
-              <h2>Publish Beet</h2>
+              <h2 className="publish">Publish Beet</h2>
               <div>
                 <h3>Collaborators</h3>
                 <ul>
@@ -197,7 +196,13 @@ const Studio = React.createClass({
                     type="text"
                   />
                 </div>
-                <button onClick={this.handlePublish}>Publish Beet</button>
+                <button
+                  className="waves-effect waves-light btn"
+                  id="publish"
+                  onClick={this.handlePublish}
+                >
+                  Publish Beet
+                </button>
               </form>
             </div>
             <Chat
