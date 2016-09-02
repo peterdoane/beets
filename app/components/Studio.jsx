@@ -135,7 +135,7 @@ const Studio = React.createClass({
     })
     .catch((err) => {
       notify.show('Oops! Try again....', 'error', 5000);
-      throw err;
+      console.error(err);
     });
   },
 
