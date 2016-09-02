@@ -21,28 +21,22 @@ const Btn = React.createClass({
     const active = this.isActive();
     const buttonClassName = () => {
       if (step <= 3) {
-        return classnames('drum-button-orange', {pressed: btnState}, {active: active});
+        return classnames('drum-button-orange',
+          { pressed: btnState }, { active });
       }
       else if (step <= 7) {
-        return classnames('drum-button-yellow',{pressed: btnState}, {active: active} )
+        return classnames('drum-button-yellow',
+          { pressed: btnState }, { active });
       }
       else if (step <= 11) {
-        return classnames('drum-button-white',{pressed: btnState}, {active: active} )
+        return classnames('drum-button-white',
+          { pressed: btnState }, { active });
       }
-        return classnames('drum-button-red',{pressed: btnState}, {active: active} )
-    };
-    const style = {
 
-    // background: this.props.btnState ? (active ? 'green': 'black') : 'white',
-    // border: active ? '1px solid red' : '1px solid black',
-    // boxSizing: 'unset',
-    // height: '5%',
-    // width: '5%',
-    // margin:'.125%'
-
-    // left: `${this.props.step * width}px`,
-    // top: `${this.props.row * height}px`,
+      return classnames('drum-button-red',
+        { pressed: btnState }, { active });
     };
+
     const fill = this.state.isBtnActive ? '#fff' : '#000';
 
 /* eslint-disable */
