@@ -14,10 +14,10 @@ const Chat = React.createClass({
     this.props.socket.on('post message', (data) => {
       this.setState({
         messages: this.state.messages.concat(
-          <li key={this.state.messages.length}>
-            {`${data.username}: ${data.message}`}
-          </li>
-        )
+          {
+            username: data.username,
+            message: data.message
+          })
       });
     });
   },
@@ -41,7 +41,17 @@ const Chat = React.createClass({
     return (
       <div id={'chat-container'}>
         <div id={'message-container'}>
-          <ul id={"messages"}>{this.state.messages}</ul>
+          <ul id={"messages"}>
+            {
+              this.state.messages.map((element, index) => {
+                return <li key={index}>
+                  {`${element.username}: ${element.message}`}
+                </li>;
+              })
+            }
+
+          </ul>
+
         </div>
 
         <div id={"container"}>
