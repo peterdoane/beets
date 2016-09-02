@@ -111,15 +111,11 @@ const Studio = React.createClass({
     });
   },
 
-  // handleSequence() {
-  //
-  // },
-
   handlePublish(event) {
     event.preventDefault();
     axios.post('/api/beets', {
       title: this.state.title,
-      imageUrl: this.state.imageUrl, 
+      imageUrl: this.state.imageUrl,
       sequence: this.state.sequence
     })
     .then((newBeet) => {

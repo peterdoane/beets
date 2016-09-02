@@ -3,7 +3,7 @@
 const { checkAuth } = require('../middleware');
 const express = require('express');
 const knex = require('../knex');
-const {decamelizeKeys} = require('humps');
+const { decamelizeKeys } = require('humps');
 
 // eslint-disable-next-line new-cap
 const router = express.Router();
@@ -35,8 +35,9 @@ router.get('/beets/:username', (req, res, next) => {
 
 router.post('/beets', checkAuth, (req, res, next) => {
   const { title, imageUrl, sequence } = req.body;
+
   knex('beets')
-    .insert(decamelizeKeys( { title, imageUrl, sequence } ), '*')
+    .insert(decamelizeKeys({ title, imageUrl, sequence }), '*')
     .then((beets) => {
       res.send(beets[0]);
     })

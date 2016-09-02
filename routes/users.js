@@ -7,12 +7,14 @@ const router = express.Router();
 const bcrypt = require('bcrypt-as-promised');
 const knex = require('../knex');
 const { decamelizeKeys } = require('humps');
+const boom = require('boom');
 
 // const ev = require('express-validation');
 // const validations = require('../validations/users');
 
 router.get('/users', (req, res, next) => {
   knex('users')
+    .select('username')
     .orderBy('id')
     .then((users) => {
       res.send(users);
@@ -26,12 +28,10 @@ router.post('/users', (req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
 
-  // Check if username already exists
   knex('users').where('username', username)
     .then((users) => {
       if (users.length > 0) {
-        return res.status(400)
-          .set('Content-Type', 'text/plain').send('Username already exists');
+        throw boom.create(400, 'username already exists');
       }
 
       return bcrypt.hash(password, 12);
