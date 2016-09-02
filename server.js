@@ -30,14 +30,7 @@ switch (app.get('env')) {
 const path = require('path');
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'app/photos')));
 
-// maybe this one would be a good location for the photo
-app.use('/api/samples', express.static(path.join(__dirname, 'app/assets')));
-
-// That code is being transpiled by brunch the stuff in the public folder
-// Gotcha, it's not in the repo. I'll add a new route then
-// CRSF protection
 app.use('/api', (req, res, next) => {
   if (/json/.test(req.get('Accept'))) {
     return next();
@@ -68,6 +61,12 @@ app.use((_req, res) => {
 
 // eslint-disable-next-line max-params
 app.use((err, _req, res, _next) => {
+  if (err.output && err.output.statusCode){
+    return res
+      .status(err.output.statusCode)
+      .set('Content-Type', 'text/plain')
+      .send(err.message);
+  }
   // eslint-disable-next-line no-console
   console.error(err.stack);
   res.sendStatus(500);

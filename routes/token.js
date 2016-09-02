@@ -31,18 +31,18 @@ router.post('/token', (req, res, next) => {
         expiresIn: '3h'
       });
 
-      res.cookie('mc_accessToken', token, {
+      res.cookie('beets_accessToken', token, {
         httpOnly: true,
         expire: expiry,
         secure: router.get('env') === 'production'
       });
 
-      res.cookie('mc_loggedIn', true, {
+      res.cookie('beets_loggedIn', true, {
         expires: expiry,
         secure: router.get('env') === 'production'
       });
 
-      res.cookie('mc_username', user.username, {
+      res.cookie('beets_username', user.username, {
         expires: expiry,
         secure: router.get('env') === 'production'
       });
@@ -58,9 +58,9 @@ router.post('/token', (req, res, next) => {
 });
 
 router.delete('/token', (req, res) => {
-  res.clearCookie('mc_accessToken');
-  res.clearCookie('mc_loggedIn');
-  res.clearCookie('mc_username');
+  res.clearCookie('beets_accessToken');
+  res.clearCookie('beets_loggedIn');
+  res.clearCookie('beets_username');
 
   res.sendStatus(200);
 });

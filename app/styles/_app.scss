@@ -16,7 +16,7 @@
 }
 
 .blackbird-background {
-  background-image: url('blackbird.jpg');
+  background-image: url('/photos/blackbird.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -37,7 +37,7 @@
 
 .studio3-background {
   @extend .blackbird-background;
-  background-image: url('studio3.jpg');
+  background-image: url('/photos/studio3.jpg');
 }
 
 @media screen and (max-width: 1024px) { /* Specific to this particular image */

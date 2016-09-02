@@ -7,7 +7,7 @@ import { withRouter } from 'react-router';
 const LoggedIn = React.createClass({
   getInitialState() {
     return {
-      username: cookie.load('mc_username'),
+      username: cookie.load('beets_username'),
       beets: []
     };
   },

@@ -8,15 +8,13 @@ import axios from 'axios';
 import cookie from 'react-cookie';
 import { notify } from 'react-notify-toast';
 
-// var Image = require('react-image-component')
-// React.renderComponent(<Image src='./photos/blackbird.jpg')
 const socket = io();
 
 const Studio = React.createClass({
   getInitialState() {
     return {
       studio: this.props.params.id,
-      username: cookie.load('mc_username'),
+      username: cookie.load('beets_username'),
       collaborators: [
       ],
       imageUrl: '',
@@ -121,7 +119,7 @@ const Studio = React.createClass({
     event.preventDefault();
     axios.post('/api/beets', {
       title: this.state.title,
-      image_url: this.state.imageUrl, // eslint-disable-line camelcase
+      imageUrl: this.state.imageUrl, 
       sequence: this.state.sequence
     })
     .then((newBeet) => {

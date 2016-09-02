@@ -10,7 +10,7 @@ const Nav = React.createClass({
             className="brand-logo"
             to={'/'}
           >
-            <img className="beets-logo" src="/Beets-logo.png" />
+            <img className="beets-logo" src="/photos/Beets-logo.png" />
           </Link>
         </div>
       </nav>

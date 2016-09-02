@@ -15,14 +15,14 @@ const Main = React.createClass({
               <Beets />
             </div>
             <div className="col s4">
-              {cookie.load('mc_loggedIn')
-                ? <LoggedIn username={cookie.load('mc_username')} />
+              {cookie.load('beets_loggedIn')
+                ? <LoggedIn username={cookie.load('beets_username')} />
                 : <Login />}
             </div>
           </div>
           <div className="row">
             <div>
-              {cookie.load('mc_loggedIn') ? <Studios /> : null}
+              {cookie.load('beets_loggedIn') ? <Studios /> : null}
             </div>
           </div>
         </div>

@@ -19,38 +19,20 @@ class Drum {
     this.source.start(time);
   }
 }
-
-// axios.all([]).then(responses => {
-//
-// });
-
-//
-/*
-see if axios has a method to resolve all the requests ...
-axios parallel api (later optimizations)
-const files = ['f1', 'f2', 'f3'];
-q.all(files.map(f => {
-return axios.get(f, { responseType: 'arraybuffer'})
-})).then(allRawData => {
-// another one to returna list of buffers ...
-  const drums = allBuffer.map(b => {return new Drum (context, b)})
-}).catch(e => {
-});
-*/
 const drums = [];
 
 const filenames = [
-  '/api/samples/bd/BD2510.mp3',
-  '/api/samples/SD/SD0010.mp3',
-  '/api/samples/LT/LT50.WAV',
-  '/api/samples/MT/MT75.WAV',
-  '/api/samples/HT/HT75.mp3',
-  '/api/samples/RS/RS.WAV',
-  '/api/samples/CP/CP.WAV',
-  '/api/samples/CB/CB.mp3',
-  '/api/samples/CY/CY1000.mp3',
-  '/api/samples/OH/OH25.WAV',
-  '/api/samples/CH/CH.WAV'
+  '/drumSamples/bd/BD2510.mp3',
+  '/drumSamples/SD/SD0010.mp3',
+  '/drumSamples/LT/LT50.WAV',
+  '/drumSamples/MT/MT75.WAV',
+  '/drumSamples/HT/HT75.mp3',
+  '/drumSamples/RS/RS.WAV',
+  '/drumSamples/CP/CP.WAV',
+  '/drumSamples/CB/CB.mp3',
+  '/drumSamples/CY/CY1000.mp3',
+  '/drumSamples/OH/OH25.WAV',
+  '/drumSamples/CH/CH.WAV'
 ];
 
 for (let i = 0; i < filenames.length; ++i) {
