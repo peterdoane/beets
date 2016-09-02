@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 
 const Btn = React.createClass({
   getInitialState() {
@@ -20,24 +21,15 @@ const Btn = React.createClass({
     const active = this.isActive();
     const buttonClassName = () => {
       if (step <= 3) {
-        return `drum-button-orange ${
-          btnState ? 'pressed' : ''
-        } ${active ? 'active' : ''}`;
+        return classnames('drum-button-orange', {pressed: btnState}, {active: active});
       }
       else if (step <= 7) {
-        return `drum-button-yellow ${
-          btnState ? 'pressed' : ''
-        } ${active ? 'active' : ''}`;
+        return classnames('drum-button-yellow',{pressed: btnState}, {active: active} )
       }
       else if (step <= 11) {
-        return `drum-button-white ${
-          btnState ? 'pressed' : ''
-        } ${active ? 'active' : ''}`;
+        return classnames('drum-button-white',{pressed: btnState}, {active: active} )
       }
-
-      return `drum-button-red ${
-        btnState ? 'pressed' : ''
-      } ${active ? 'active' : ''}`;
+        return classnames('drum-button-red',{pressed: btnState}, {active: active} )
     };
     const style = {
 

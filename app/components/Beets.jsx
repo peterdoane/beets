@@ -11,6 +11,7 @@ const Beets = React.createClass({
   componentWillMount() {
     let beets;
 
+// TODO: join on server, replace multiple axios call with single axios call
     axios.get('/api/beets')
     .then((res) => {
       beets = res.data;
