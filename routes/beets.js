@@ -46,8 +46,6 @@ router.get('/beets/:username', (req, res, next) => {
     });
 });
 
-
-
 router.post('/beets', checkAuth, (req, res, next) => {
   const { title, imageUrl, sequence } = req.body;
 
