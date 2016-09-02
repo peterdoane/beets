@@ -19,6 +19,9 @@ router.get('/beets', (_req, res, next) => {
     });
 });
 
+// select username, beets.title from beets inner join
+  // beets_users on (beets.id=beets_users.beet_id)
+  // inner join users on(beets_users.user_id=users.id);
 router.get('/beets/collaborators', (req, res, next) => {
   knex('beets')
     .select('username', 'title')

@@ -13,18 +13,17 @@ const LoggedIn = React.createClass({
   },
 
   componentWillMount() {
-    const arr = [];
-
     axios.get(`/api/beets/${this.state.username}`)
     .then((res) => {
-      for (let i = 0; i < res.data.length; i++) {
-        arr.push(res.data[i].title);
-      }
+      const arr = res.data.map((beet) => {
+        return beet.title;
+      });
 
       this.setState({ beets: arr });
     })
     .catch((err) => {
-      throw err;
+      // eslint-disable-next-line no-console
+      console.error(err);
     });
   },
 
@@ -36,7 +35,9 @@ const LoggedIn = React.createClass({
       })
       .catch((err) => {
         notify.show('Oops! Try again....', 'error', 5000);
-        throw err;
+
+        // eslint-disable-next-line no-console
+        console.error(err);
       });
   },
 

@@ -46,7 +46,6 @@ const Btn = React.createClass({
       <div
         className={buttonClassName()}
         onClick={this.handleClick}
-        style={style}
       >
         <svg height="26px" width="15px" viewBox="484 417 15 26">
           <defs>

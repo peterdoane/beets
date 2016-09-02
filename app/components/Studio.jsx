@@ -19,7 +19,9 @@ const Studio = React.createClass({
       ],
       imageUrl: '',
       sequence: '[[],[],[],[],[],[],[],[],[],[],[],[],[]]',
-      title: ''
+      title: '',
+      inputTitle: '',
+      inputImageUrl: ''
     };
   },
   componentWillMount() {
@@ -130,8 +132,10 @@ const Studio = React.createClass({
     })
     .then(() => {
       notify.show('Your beet is now published!', 'success', 5000);
-      document.getElementById('input-title').value = '';
-      document.getElementById('input-image-url').value = '';
+      this.setState({
+        title: '',
+        imageUrl: ''
+      });
     })
     .catch((err) => {
       notify.show('Oops! Try again....', 'error', 5000);
@@ -182,6 +186,7 @@ const Studio = React.createClass({
                     onChange={this.handleTitle}
                     placeholder="Title"
                     type="text"
+                    value={this.state.title}
                   />
                 </div>
                 <div>
@@ -190,6 +195,7 @@ const Studio = React.createClass({
                     onChange={this.handleImageUrl}
                     placeholder="Album Image URL"
                     type="text"
+                    value={this.state.imageUrl}
                   />
                 </div>
                 <button
