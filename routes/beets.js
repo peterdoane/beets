@@ -19,6 +19,19 @@ router.get('/beets', (_req, res, next) => {
     });
 });
 
+router.get('/beets/collaborators', (req, res, next) => {
+  knex('beets')
+    .select('username', 'title')
+    .join('beets_users', 'beets.id', '=', 'beets_users.beet_id')
+    .join('users', 'beets_users.user_id', '=', 'users.id')
+    .then((username) => {
+      res.send(username);
+    })
+    .catch((err) => {
+      next(err);
+    });
+});
+
 router.get('/beets/:username', (req, res, next) => {
   knex('beets_users')
     .select('title')
@@ -32,6 +45,8 @@ router.get('/beets/:username', (req, res, next) => {
       next(err);
     });
 });
+
+
 
 router.post('/beets', checkAuth, (req, res, next) => {
   const { title, imageUrl, sequence } = req.body;
