@@ -20,8 +20,11 @@ const Studio = React.createClass({
       imageUrl: '',
       sequence: '[[],[],[],[],[],[],[],[],[],[],[],[],[]]',
       title: '',
-      inputTitle: '',
-      inputImageUrl: ''
+      bpm: 120,
+      sequence: [
+        [[], [], [], [], [], [], [], [], [], [], [], [], []],
+        [[], [], [], [], [], [], [], [], [], [], [], [], []]
+      ]
     };
   },
   componentWillMount() {
@@ -40,7 +43,7 @@ const Studio = React.createClass({
       });
 
       if (this.state.username === data.usernames[0]) {
-        const sequence = this.refs.drumMachine.state.sequence;
+        const sequence = this.state.sequence;
 
         socket.emit('sync', {
           studio: this.props.params.id,
@@ -51,37 +54,41 @@ const Studio = React.createClass({
         socket.emit('sync', {
           studio: this.props.params.id,
           username: this.state.username,
-          bpm: this.refs.drumMachine.state.bpm
+          bpm: this.state.bpm
         });
       }
     });
 
     socket.on('sync', (data) => {
-      const drumMachine = this.refs.drumMachine;
-
       if (data.sequence) {
         if (data.username !== this.state.username) {
-          drumMachine.setState({ sequence: data.sequence });
+          this.setState({ sequence: data.sequence });
         }
       }
       else if (data.buttonClick) {
         if (data.username !== this.state.username) {
-          const sequence = drumMachine.state.sequence;
+          const sequence = this.state.sequence.slice(); // make copy
           const { pattern, row, step } = data.buttonClick;
 
           sequence[pattern][row][step] = !sequence[pattern][row][step];
-          drumMachine.setState({ sequence });
+          this.setState({ sequence });
         }
       }
       else if (data.bpm) {
         if (data.username !== this.state.username) {
-          drumMachine.setState({ bpm: data.bpm });
+          this.setState({ bpm: data.bpm });
         }
       }
     });
   },
 
   buttonClick(pattern, row, step) {
+    const nextSequence = this.state.sequence.slice(); // make copy
+
+    nextSequence[pattern][row][step] =
+      !nextSequence[pattern][row][step];
+    this.setState({ sequence: nextSequence });
+
     socket.emit('sync', {
       studio: this.props.params.id,
       username: this.state.username,
@@ -90,6 +97,8 @@ const Studio = React.createClass({
   },
 
   bpmChanged(newBpm) {
+    this.setState({ bpm: newBpm });
+
     socket.emit('sync', {
       studio: this.props.params.id,
       username: this.state.username,
@@ -163,9 +172,10 @@ const Studio = React.createClass({
           <Knob />
           <div>
             <DrumMachine
+              bpm={this.state.bpm}
               bpmChanged={this.bpmChanged}
               buttonClick={this.buttonClick}
-              ref="drumMachine"
+              sequence={this.state.sequence}
             />
           </div>
           <div className="meta-data">

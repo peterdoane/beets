@@ -51,25 +51,14 @@ const DrumMachine = React.createClass({
     return {
       activePattern: 0,
       activeStep: -1,
-      bpm: 120,
       interval: null,
-      isTicking: false,
-      sequence: [
-        [[], [], [], [], [], [], [], [], [], [], [], [], []],
-        [[], [], [], [], [], [], [], [], [], [], [], [], []]
-      ]
+      isTicking: false
     };
   },
   btnClicked(pattern, row, step) {
-    const nextSequence = this.state.sequence.slice();
-
-    nextSequence[pattern][row][step] =
-      !nextSequence[pattern][row][step];
-    this.setState({ sequence: nextSequence });
     this.props.buttonClick(pattern, row, step);
   },
   handleChangeBpm(event) {
-    this.setState({ bpm: event.target.value });
     this.props.bpmChanged(event.target.value);
   },
   handleChangePattern(event) {
@@ -92,7 +81,7 @@ const DrumMachine = React.createClass({
   },
   tick() {
     const nextActiveStep = (this.state.activeStep + 1) % 16;
-    const activeSequence = this.state.sequence[this.state.activePattern];
+    const activeSequence = this.props.sequence[this.state.activePattern];
 
     for (let i = 0; i < activeSequence.length; ++i) {
       if (activeSequence[i][nextActiveStep]) {
@@ -101,7 +90,7 @@ const DrumMachine = React.createClass({
     }
     this.setState({
       activeStep: nextActiveStep,
-      interval: setTimeout(this.tick, 60000 / this.state.bpm / 4)
+      interval: setTimeout(this.tick, 60000 / this.props.bpm / 4)
     });
   },
   render() {
@@ -118,7 +107,7 @@ const DrumMachine = React.createClass({
             className="tempo"
             onChange={this.handleChangeBpm}
             type="number"
-            value={this.state.bpm}
+            value={this.props.bpm}
           />
 
           <select
@@ -138,7 +127,7 @@ const DrumMachine = React.createClass({
             className="machine-left"
             drums={drums}
             pattern={0}
-            sequence={this.state.sequence[0]}
+            sequence={this.props.sequence[0]}
           />
           <Grid
             activePattern={this.state.activePattern}
@@ -147,7 +136,7 @@ const DrumMachine = React.createClass({
             className="machine-right"
             drums={drums}
             pattern={1}
-            sequence={this.state.sequence[1]}
+            sequence={this.props.sequence[1]}
           />
         </div>
       </div>
